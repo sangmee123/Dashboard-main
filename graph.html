@@ -1,0 +1,162 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Smart Dashboard</title>
+    <link rel="stylesheet" href="css/graph.css">
+    <script src="https://code.highcharts.com/highcharts.js"></script>
+    <script src="https://code.highcharts.com/highcharts-more.js"></script>
+    <script src="https://code.highcharts.com/modules/series-label.js"></script>
+    <script src="https://code.highcharts.com/modules/solid-gauge.js"></script>
+    <script src="https://code.highcharts.com/modules/variable-pie.js"></script>
+    <script src="https://code.highcharts.com/modules/exporting.js"></script>
+    <script src="https://code.highcharts.com/modules/export-data.js"></script>
+    <script src="https://code.highcharts.com/modules/accessibility.js"></script>
+    <script src="https://cdn.amcharts.com/lib/5/index.js"></script>
+    <script src="https://cdn.amcharts.com/lib/5/xy.js"></script>
+    <script src="https://cdn.amcharts.com/lib/5/themes/Animated.js"></script>
+    <script src="https://code.highcharts.com/highcharts-3d.js"></script>
+    <script src="https://d3js.org/d3.v7.min.js"></script>
+</head>
+
+<body>
+    <div class="navibar"> 
+        <p class="date"></p>
+        <h1 class="time"></h1>
+        <a href="index.html" class="btn orange"><img src="images/home_icon.png" class="icon"><p class="icon_p">home</p></a>
+        <a href="map.html" class="btn orange"><img src="images/map_icon.png" class="icon"><p class="icon_p">map</p></a>
+        <a href="graph.html" class="btn orange"><img src="images/graph_icon.png" class="icon"><p class="icon_p">graph</p></a>
+        <a href="product.html" class="btn orange" title="트랙터 아이콘  제작자: Good Ware - Flaticon"><img src="images/product_icon.png" class="icon"><p class="icon_p">product</p></a>
+        <a href="https://yghahm.cafe24.com/loin.php" target="_blank" class="orange"><h1 class="text">MDS</h1></a>
+        
+        <div class="now">
+            <img id="todayImg">
+            <br><span class="todayWeather" id="weatherToday1"></span>
+            <br><span class="todayWeather" id="weatherToday2"></span>
+            <p id="connect">db연결 중...</p>
+        </div>
+    </div>
+    <div class="logo">
+        <a href="index.html"><img src="images/logo.png" style="height: 59px;"></a>
+    </div>
+
+    <div class="graph_top">
+        <figure class="highcharts-figure1">
+            <div id="container1"></div>
+        </figure>
+
+        <div id="chartdiv"></div>
+
+        <div class="contents">
+            <div id="menu">
+                <h1><b>기업 리스트</b></h1>
+                <hr>
+                <ul class="list">
+                    <a href="#" class="li_c wth youngjin">영진기계</a>
+                    <ul class="y">
+                        <li class="li_c li0 hide c">9호기</li>
+                        <li class="li_c li1 hide c">10호기</li>
+                    </ul>
+                    <a href="#" class="li_c wth enc">우복이엔씨(주)</a> 
+                    <ul class="e">
+                        <li class="li_c li2 c" style="display: none;">(임시)</li>
+                        <li class="li_c li3 c" style="display: none;">(임시)</li>
+                    </ul>
+                    <a href="#" class="li_c wth enc"></a> 
+                    <a href="#" class="li_c wth enc"></a> 
+                    <a href="#" class="li_c wth enc"></a> 
+                    <a href="#" class="li_c wth enc"></a> 
+                    <a href="#" class="li_c wth enc"></a>   
+                    <!-- <li class="li_c li4">(주)비젼시스템</li>
+                    <li class="li_c li5">정우건설중기</li>
+                    <li class="li_c li6">(주)에스지오</li>
+                    <li class="li_c li7">대웅건설(주)</li>
+                    <li class="li_c li8">영주대형건설기계</li>
+                    <li class="li_c li9">영암건설장비(주)</li>
+                    <li class="li_c li11">송광건설기계</li>
+                    <li class="li_c li10">금성건설기계</li>
+                    <li class="li_c li12">솔리메틱스</li>
+                    <li class="li_c li13">한내건설(주)</li> -->
+                </ul><hr>
+            </div>
+        </div>
+    </div>
+
+    <div class="graph_bottom">
+        <div id="chartdiv3"></div>
+        <div id="chartdiv4"></div>
+        <div id="chartdiv5"></div>
+    </div>
+
+    <script src="js/graph.js"></script>
+    <script src="//code.jquery.com/jquery.min.js"></script> 
+    <script>
+        
+        $('.youngjin').on('click', function() {
+            $('.hide').css('display') == 'none' ?
+            $('.hide').css('display', 'block') : 
+            $('.hide').css('display', 'none');
+        });
+
+        const period = 3000;
+        let arr1 = []; //pressure
+        let arr2 = []; //max_depth
+        let arr3 = []; //torque
+        let arr4 = []; //inclination(x, y)
+        let arr5 = []; //beat_position
+
+        GET_db();
+        function GET_db() {
+            $.ajax({
+                url: "GET_db.php",
+                type: 'get',
+                async: false,
+            }).done(function(data) {
+                data = JSON.parse(data);
+                if(data.result == "success") {
+                    arr1.push({
+                        value: data.pressure
+                    });
+                    
+                    arr2.push({ 
+                        year: data.collecttime, 
+                        value: Math.abs(data.max_depth / 1000) 
+                    });
+
+                    arr3.push({ 
+                        year: data.collecttime,
+                        value: Math.abs(data.torque / 100)
+                    });
+                    
+                    let inX = data.inclination_x;
+                    let inY = data.inclination_y;
+                    if(inX > 18000) {
+                        inX = 36000 - data.inclination_x;
+                    }
+                    if(inY > 18000) {
+                        inY = 36000 - data.inclination_y;
+                    }
+                    arr4.push({
+                        date1: data.collecttime,
+                        value1: Math.abs(inX / 100),
+                        value2: Math.abs(inY / 100),
+                        date2: data.collecttime
+                    });
+              
+                    arr5.push({ 
+                        year: data.collecttime,
+                        value: Math.abs(data.beat_position)
+                    });
+
+                    $('#connect').text("DB 연결 성공");
+                }
+            }).fail(function(data) {
+                $('#connect').text("HTTP 요청 실패");
+            });
+            let timer1 = setTimeout("GET_db()", period);// 3초 단위로 갱신 처리
+        }
+    </script>   
+</body>
+</html>

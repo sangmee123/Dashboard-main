@@ -1,0 +1,362 @@
+* { margin: 0; padding: 0; }
+
+body {
+    background: linear-gradient(to bottom, rgb(45, 67, 100), rgb(143, 151, 155), rgb(45, 67, 100));
+}
+
+.navbar {
+    width: 250px;
+    height: 100%;
+    background-color: rgba(50, 95, 134);
+    box-shadow: 0px 0px 5px 0px;
+    position: fixed;
+    z-index: 1;
+}
+
+.date {
+    font-size: 40px;
+    text-align: center;
+    color: white;
+    margin-top: 100px;
+}
+
+.time {
+    font-size: 50px;
+    text-align: center;
+    color: white;
+}
+
+a { 
+    font-weight: bold;
+    text-decoration: none; 
+    color: black;
+}
+a:hover {
+    color: rgba(237, 152, 7);
+}
+.icon {
+    width: 50px;
+    margin-top: 10%;
+    margin-left: 40%;
+}.icon_p { 
+    text-align: center; 
+}
+
+.logo {
+    position: fixed;
+    width: 100%;
+    height: 70px;
+    background-color: rgb(231, 230, 230);
+    margin-left: 250px;
+}.logo img { 
+    position: fixed; 
+}
+
+.text {
+    text-align: center; 
+    font-size: 40px;
+    margin-top: 100px;
+}
+
+/* 날씨 */
+.now {
+    text-align: center;
+    margin-top: 80px;
+}
+
+#todayImg {
+    width: 130px;
+}
+
+.todayWeather {
+    color: white;
+    font-size: 20px;
+}
+
+/*Map Css*/
+html, body {width:100%;height:100%;margin:0;padding:0;} 
+.map_wrap {display:inline-block;position:fixed;width:100%;height:100%;margin-top:70px;}
+#map {width:100%;height:100%;}
+.radius_border{border:1px solid #919191;border-radius:5px;}     
+.custom_typecontrol {position:absolute;top:10px;right:10px;overflow:hidden;width:130px;height:30px;margin:0;padding:0;z-index:1;font-size:12px;font-family:'Malgun Gothic', '맑은 고딕', sans-serif;}
+.custom_typecontrol span {display:block;width:65px;height:30px;float:left;text-align:center;line-height:30px;cursor:pointer;}
+.custom_typecontrol .btn {background:#fff;background:linear-gradient(#fff,  #e6e6e6);}       
+.custom_typecontrol .btn:hover {background:#f5f5f5;background:linear-gradient(#f5f5f5,#e3e3e3);}
+.custom_typecontrol .btn:active {background:#e6e6e6;background:linear-gradient(#e6e6e6, #fff);}    
+.custom_typecontrol .selected_btn {color:#fff;background:#425470;background:linear-gradient(#425470, #5b6d8a);}
+.custom_typecontrol .selected_btn:hover {color:#fff;}   
+.custom_zoomcontrol {position:absolute;top:50px;right:10px;width:36px;height:80px;overflow:hidden;z-index:1;background-color:#f5f5f5;} 
+.custom_zoomcontrol span {display:block;width:36px;text-align:center;cursor:pointer;}     
+.custom_zoomcontrol span img {width:15px;height:15px;padding:12px 0;border:none;}             
+.custom_zoomcontrol span:first-child{border-bottom:1px solid #bfbfbf;} 
+
+.contents {
+    background-color: rgb(247, 246, 246);   
+    height: 100%;
+    margin-top: 70px;
+    left: 250px;
+    position: fixed;
+}
+.header {   
+    width: 300px;
+    background-color: rgb(247, 246, 246);  ;
+    color: rgba(0, 0, 0, 0.7);
+    font-size: 20px;
+    font-weight: bold;
+    border-bottom: 1px solid rgb(226, 226, 226);
+    padding: 20px;
+    position: fixed;
+}.header p { margin-left: 25%;}
+
+.list { 
+    overflow-y: auto;
+    color: rgba(0, 0, 0, 0.85);
+    list-style: none;
+    padding: 10px 70px 10px 70px;
+    margin-top: 70px;
+}
+
+li {
+    background-color: white;
+    text-align: center;
+    padding: 20px 35px 20px 35px;
+    border: 1px solid rgb(198, 198, 198);
+    border-radius: 5px;
+    margin-top: 5px;
+} li:hover {
+    background-color: rgba(198, 198, 198);
+}
+
+/* 노트북 & PC CSS*/ 
+@media all and (min-width:1024px) and (max-width: 1980px) {
+    body { background-size: 1020px 800px; }
+
+    .navbar {
+        width: 230px;
+        height: 100%;
+    }
+
+    .date {
+        font-size: 30px;
+        margin-top: 35px;
+    }
+    
+    .time {
+        margin-top: -5%;
+        margin-bottom: 20px;
+        font-size: 40px;
+    }
+
+    .icon {
+        width: 40px;
+        margin-top: 3%;
+        margin-left: 95px;
+    }.icon_p { 
+        text-align: center; 
+        font-size: 14px;
+        font-weight: bold;
+    }
+    
+    .logo {
+        margin-left: 0px;
+        width: 100%;
+        height: 60px;
+        background-color: rgb(231, 230, 230);
+    }.logo img { margin-left: 230px; }
+
+    .text {
+        text-align: center;
+        font-size: 25px;
+        margin-top: 10px;
+    }
+    
+    /* 날씨 */
+    .now {
+        text-align: center;
+        margin-top: -10px;
+    }
+    
+    #todayImg {
+        width: 100px;
+    }
+    
+    .todayWeather {
+        color: white;
+        font-size: 18px;
+        font-weight: bold;
+    }
+
+    /* Map Css */
+    #map {
+        margin-left:0px;
+        width:100%;
+        height:100%;
+    }
+    .map_wrap {margin-top:60px;}
+
+    .contents {
+        left: 230px;
+        margin-top: 60px;
+        position: fixed;
+    }
+
+    .header {
+        width: 215px;
+    }.header p { margin-left: 18%; } 
+
+    .list {
+        overflow-y: auto;
+        height: 75%;
+        padding: 10px 50px 10px 50px;
+    }
+    
+    li {
+        font-size: 13px;
+        font-weight: bold;
+        padding: 15px 25px 15px 25px;
+        border-radius: 10px;
+    }
+} 
+
+/*Map Css*/
+@media screen and (min-width:768px) and (max-width: 1200px) {
+    
+    /* 테블릿 CSS */
+    .navbar {
+        width: 180px;
+        height: 100%;
+        box-shadow: 0px 0px 5px 0px;
+        position: fixed;
+    }
+
+    .date {
+        font-size: 30px;
+        margin-top: 30px;
+    }
+
+    .time {
+        font-size: 40px;
+        margin-bottom: 10px;
+    }
+
+    .text {
+        text-align: center;
+        font-size: 30px;
+        margin-top: 30px;
+    }
+    .text2 {
+        text-align: center;
+        margin-top: 20px;
+    }
+
+    .icon {
+        width: 47px;
+        margin-top: 8%;
+        margin-left: 40%;
+    }.icon_p { 
+        font-size: 15px;
+        margin-left: 5%; 
+    }
+
+    /* 날씨 */
+    .now {
+        margin-top: 0px;
+    }
+
+    #todayImg {
+        width: 100px;
+    }
+    
+    .todayWeather {
+        color: white;
+        font-size: 15px;
+    }
+
+    .logo {
+        margin-left: 0px;
+        width: 100%;
+        height: 60px;
+        background-color: rgb(231, 230, 230);
+    }.logo img { margin-left: 180px; }
+
+    #map {
+        margin-top: 0px;
+        margin-left:0px;
+        width: 100%;
+        height:100%;
+    }
+
+    .contents {
+        overflow-y: scroll;
+        left: 180px;
+        margin-top: 60px;
+        position: fixed;
+    }
+    
+    .header { width: 195px; }
+    .header p { margin-left: 12%; }
+
+    .list {
+        font-size: 13px;
+        font-weight: bold;
+        list-style: none;
+        padding: 10px 40px 10px 40px;
+    }
+    
+    li {
+        padding: 13px 25px 13px 25px;
+        margin-top: 2.5px;
+    } 
+}
+
+@media screen and (max-width:500px) {
+    /* 모바일 CSS*/
+
+    body { background: rgba(239, 239, 239); }
+
+    .navbar { display: none; }
+
+    .logo {
+        height: 60px;
+        margin-left: 0px;
+        position: fixed;
+    }
+
+    .map_wrap {
+        width: 100%;
+        height: 100%;
+        margin-top: 60px;
+    }
+    #map {
+        width: 100%;
+        margin-top: 0px;
+        margin-left: 0px;
+    }
+
+    .contents {
+        background-color: #8a94a5;
+        overflow-y: scroll;
+        width: 100%;
+        height: 200px;
+        left: 0px;
+        bottom: 0px;
+    }
+
+    .header { 
+        width: 100%;
+        background-color: #8a94a5;
+    }
+    .header p { margin-left: 25%; }
+
+    .list {
+        font-size: 13px;
+        font-weight: bold;
+        list-style: none;
+        padding: 10px 40px 10px 40px;
+    }
+    
+    li {
+        padding: 13px 25px 13px 25px;
+        margin-top: 2.5px;
+    } 
+} 

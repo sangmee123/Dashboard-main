@@ -1,0 +1,576 @@
+* { 
+    margin: 0; padding: 0; 
+    overflow-x: hidden;
+    overflow-y: hidden;
+}
+body {
+    background: linear-gradient(to bottom, rgb(45, 67, 100), rgb(143, 151, 155), rgb(45, 67, 100));
+}
+.navibar {
+    width: 250px;
+    height: 100%;
+    background-color: rgba(50, 95, 134, 0.9);
+    box-shadow: 0px 0px 5px 0px;
+    position: fixed;
+}
+
+.date {
+    font-size: 40px;
+    text-align: center;
+    color: white;
+    margin-top: 100px;
+}
+
+.time {
+    font-size: 50px;
+    text-align: center;
+    color: white;
+}
+
+a { 
+    font-weight: bold;
+    text-decoration: none; 
+    color: black;
+}.orange:hover {
+    color: rgba(237, 152, 7);
+}
+.icon {
+    width: 50px;
+    margin-top: 10%;
+    margin-left: 40%;
+}.icon_p { 
+    text-align: center; 
+    font-size: 20px;
+}
+
+.logo {
+    width: 100%;
+    height: 70px;
+    background-color: rgb(231, 230, 230);
+    margin-left: 250px;
+}
+
+#bg { margin-left: 250px; }
+
+.text {
+    text-align: center;
+    font-size: 40px;
+    margin-top: 100px;
+}
+
+/* 날씨 */
+.now {
+    text-align: center;
+    margin-top: 80px;
+}
+
+#todayImg { width: 130px; }
+
+.todayWeather {
+    color: white;
+    font-size: 20px;
+}
+
+/*chart1*/
+#container1 {
+    height: 400px;   
+    border-radius: 15px;
+    margin-top: 60px;   
+}
+
+.highcharts-figure1,
+.highcharts-data-table table {
+    display: inline-block;
+    min-width: 395px;
+    max-width: 300px; 
+    margin-left: 320px;  
+    margin-right: 50px;
+    float: left;
+}
+
+.highcharts-data-table table {
+    font-family: Verdana, sans-serif;
+    border-collapse: collapse;
+    border: 1px solid #ebebeb;
+    margin: 10px auto;
+    text-align: center;
+    width: 100%;
+    max-width: 500px;
+}
+
+.highcharts-data-table caption {
+    padding: 1em 0;
+    font-size: 1.2em;
+    color: #555;
+}
+
+.highcharts-data-table th {
+    font-weight: 600;
+    padding: 0.5em;
+}
+
+.highcharts-data-table td,
+.highcharts-data-table th,
+.highcharts-data-table caption {
+    padding: 0.5em;
+}
+
+.highcharts-data-table thead tr,
+.highcharts-data-table tr:nth-child(even) {
+    background: #f8f8f8;
+}
+
+.highcharts-data-table tr:hover {
+    background: #f1f7ff;
+}
+
+/*chart2*/
+#chartdiv {
+    margin-top: 60px;
+    margin-left: 760px;
+    width: 750px;
+    height: 400px;
+    background-color: rgba(29, 49, 68, 0.4);
+    border-radius: 15px;
+    position: fixed;
+}
+
+/*기업 리스트*/
+.contents {
+    margin-top: 60px;
+    margin-left: 1555px;
+    position: fixed;
+}
+
+#menu {
+    width: 450px;
+    height: 400px;
+    text-align: center;
+    color: white;
+    background-color: rgba(24, 38, 51, 0.4);
+    border-radius: 15px;
+}
+#menu .li_c:hover { 
+    background-color: white; 
+    color: black;
+}
+
+h1 {
+    font-size: 25px;
+    margin-top: 30px;
+    margin-bottom: 30px;
+}
+
+.list { 
+    overflow-y: scroll;
+    height: 270px;
+}
+.wth {
+    display: block;
+    width: 100%;
+}
+.li_c {   
+    text-decoration: none;  
+    color: white;
+    font-weight: normal;
+    list-style: none;
+    padding: 15px;
+}
+
+.y {
+    background: linear-gradient(to bottom, rgb(45, 67, 100), rgb(167, 179, 197));
+}
+
+.hide { display: block; }
+
+.graph_bottom {
+    margin-top: 15px;
+}
+
+/*chart3*/
+#chartdiv3 {
+    height: 400px;
+    width: 395px;
+    background-color: rgba(24, 38, 51, 0.4);
+    margin-left: 320px;
+    float: left;
+    border-radius: 15px;
+}
+
+/*chart4*/
+#chartdiv4 {
+    margin-left: 760px;
+    width: 750px;
+    height: 400px;
+    background-color: rgba(24, 38, 51, 0.4);
+    border-radius: 15px;
+    position: fixed;
+}
+
+/*chart5*/
+#chartdiv5 {    
+    width: 450px;
+    height: 400px;
+    margin-left: 1555px;
+    background-color: rgba(24, 38, 51, 0.4);
+    border-radius: 15px;
+    position: fixed;
+}
+
+@media all and (min-width:1024px) and (max-width: 1980px) {
+    /* 노트북 & PC CSS*/ 
+
+    .navibar { width: 230px; }
+
+    .date {
+        font-size: 30px;
+        margin-top: 35px;
+    }
+    
+    .time {
+        margin-top: -5px;
+        font-size: 40px;
+    }
+
+    .icon {
+        width: 40px;
+        margin-top: 3%;
+        margin-left: 95px;
+    }.icon_p { 
+        text-align: center; 
+        font-size: 14px;
+        font-weight: bold;
+    }
+    
+    .logo {
+        margin-left: 230px;
+        width: 100%;
+        height: 60px;
+    }
+
+    .text {
+        text-align: center;
+        font-size: 25px;
+        margin-top: 10px;
+    }
+    
+    .now {
+        text-align: center;
+        margin-top: -35px;
+    }
+    
+    #todayImg { width: 100px; }
+    
+    .todayWeather {
+        color: white;
+        font-size: 18px;
+        font-weight: bold;
+    }
+
+    /*chart1*/
+    #container1 {
+        width: 295px;
+        height: 250px;   
+        margin-top: 8px;
+    }
+
+    .highcharts-figure1,
+    .highcharts-data-table table {
+        min-width: 300px;
+        max-width: 250px; 
+        margin-left: 240px;  
+        margin-right: 50px;
+        float: left;
+    }
+
+    /*chart2*/
+    #chartdiv {
+        width: 455px;
+        height: 250px;
+        margin-top: 8px;
+        margin-left: 540px;
+    }
+
+    /*기업 리스트*/
+    .contents {
+        margin-top: 8px;
+        margin-left: 1000px;
+    }
+
+    #menu {
+        width: 270px;
+        height: 250px;
+    }
+
+    h1 {
+        font-size: 18px;
+        margin-top: 20px;
+        margin-bottom: 20px;
+    }
+    
+    .list {
+        overflow-y: scroll;
+        height: 270px;
+    }
+    
+    .li_c { 
+        list-style: none;
+        padding: 12px;
+    }
+    
+    .graph_bottom { margin-top: 8px; }
+    
+    /*chart3*/
+    #chartdiv3 {
+        width: 295px;
+        height: 270px;
+        margin-left: 240px;
+    }
+
+    /*chart4*/
+    #chartdiv4 {
+        width: 455px;
+        height: 270px;
+        position: fixed;
+        margin-left: 540px;
+    }
+    
+    /*chart5*/
+    #chartdiv5 {    
+        width: 270px;
+        height: 270px;   
+        margin-left: 1000px;
+        background-color: rgba(24, 38, 51, 0.4);
+        border-radius: 15px;
+        position: fixed;
+    }
+}
+
+@media screen and (min-width:768px) and (max-width: 1200px) {
+    /* 테블릿 CSS */
+    body { background-size: 950px 820px; }
+
+    .navibar {
+        width: 180px;
+        height: 100%;
+        box-shadow: 0px 0px 5px 0px;
+        position: fixed;
+    }
+
+    .date {
+        font-size: 30px;
+        margin-top: 30px;
+    }
+
+    .time {
+        font-size: 40px;
+        margin-bottom: 10px;
+    }
+
+    .text {
+        text-align: center;
+        font-size: 30px;
+        margin-top: 30px;
+    }
+
+    .icon {
+        width: 47px;
+        margin-top: 8%;
+        margin-left: 40%;
+    }.icon_p { 
+        font-size: 15px;
+        margin-left: 5%; 
+    }
+
+    .now { margin-top: 0px; }
+
+    #todayImg { width: 100px; }
+    
+    .todayWeather {
+        color: white;
+        font-size: 15px;
+    }
+
+    .logo {
+        margin-left: 180px;
+        width: 100%;
+        height: 70px;
+        background-color: rgb(231, 230, 230);
+    }
+
+    /*chart1*/
+    #container1 {
+        width: 270px;
+        height: 300px;   
+        margin-top: 40px;
+    }
+
+    .highcharts-figure1,
+    .highcharts-data-table table {
+        min-width: 300px;
+        max-width: 250px; 
+        margin-left: 190px;  
+        margin-right: 50px;
+        float: left;
+    }
+
+    /*chart2*/
+    #chartdiv {
+        width: 430px;
+        height: 300px;
+        margin-top: 40px;
+        margin-left: 470px;
+    }
+
+    /*기업 리스트*/
+    .contents {
+        margin-top: 40px;
+        margin-left: 910px;
+    }
+
+    #menu {
+        width: 260px;
+        height: 300px;
+    }
+
+    h1 {
+        font-size: 18px;
+        margin-top: 20px;
+        margin-bottom: 20px;
+    }
+    
+    .list {
+        overflow-y: scroll;
+        height: 270px;
+    }
+    
+    .li_c { 
+        list-style: none;
+        padding: 12px;
+    }
+    
+    .graph_bottom {
+        margin-top: 15px;
+    }
+    
+    /*chart3*/
+    #chartdiv3 {
+        height: 320px;
+        width: 270px;
+        margin-left: 190px;
+    }
+
+    /*chart4*/
+    #chartdiv4 {
+        width: 430px;
+        height: 320px;
+        position: fixed;
+        margin-left: 470px;
+    }
+
+    /*chart5*/
+    #chartdiv5 {    
+        width: 260px;
+        height: 320px;  
+        margin-left: 910px;
+        background-color: rgba(24, 38, 51, 0.4);
+        border-radius: 15px;
+        position: fixed;
+    }
+}
+
+@media screen and (max-width:500px) {
+    /* 모바일 CSS*/
+    * { overflow-y: auto; }
+
+    body { background-color: rgba(50, 95, 134, 0.9); }
+
+    .navibar { display: none; }
+
+    .logo {     
+        overflow: hidden;
+        height: 60px;
+        margin-left: 0px;
+        position: fixed;
+        z-index: 1000;
+    }
+
+    /*chart1*/
+    #container1 {
+        width: 70%;
+        height: 250px;  
+        margin-top: 65px;
+        float: left;
+    }
+
+    .highcharts-figure1,
+    .highcharts-data-table table {
+        min-width: 300px;
+        max-width: 400px; 
+        margin-left: 0px;  
+        margin-right: 50px;
+    }
+
+    /*chart2*/
+    #chartdiv {
+        width: 100%;
+        height: 400px;
+        margin-top: 0px;
+        margin-left: 0px;
+        position: relative;
+        float: left;
+    }
+
+     /*기업 리스트*/
+     .contents {
+        width: 44%;
+        height: 400px;
+        margin-top: 65px;
+        margin-left: 58%;
+        position: fixed;
+        z-index: 1000;
+    }
+
+    #menu {
+        overflow-y: hidden;
+        width: 100%;
+        height: 245px;
+    }
+
+    h1 {
+        font-size: 18px;
+        margin-top: 20px;
+        margin-bottom: 20px;
+        overflow-y: hidden;
+    }
+    
+    .list {
+        overflow-y: scroll;
+        height: 270px;
+        font-size: 14px;
+    }
+    
+    .li_c { 
+        list-style: none;
+        padding: 12px;
+    }
+    
+    .graph_bottom { margin-top: 0px; }
+    
+    /*chart3*/
+    #chartdiv3 {
+        width: 100%;
+        height: 350px;
+        margin-left: 0px;
+        float: left;
+    }
+
+    /*chart4*/
+    #chartdiv4 {
+        width: 100%;
+        height: 400px;
+        position: relative;
+        margin-top: 320.34px;
+        margin-left: 0px;
+    }
+} 

@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Smart Dashboard</title>
+    <link rel="stylesheet" href="css/product.css">   
+</head>
+<body>
+    <div class="navibar">
+        <p class="date"></p>
+        <h1 class="time"></h1>
+        <a href="index.html" class="btn"><img src="images/home_icon.png" class="icon"><p class="icon_p">home</p></a>
+        <a href="map.html" class="btn"><img src="images/map_icon.png" class="icon"><p class="icon_p">map</p></a>
+        <a href="graph.html" class="btn"><img src="images/graph_icon.png" class="icon"><p class="icon_p">graph</p></a> 
+        <a href="product.html" class="btn"><img src="images/product_icon.png" class="icon"><p class="icon_p">product</p></a>
+        <a href="https://yghahm.cafe24.com/loin.php" target="_blank"><h1 class="text">MDS</h1></a>
+        
+        <div class="now">
+            <img id="todayImg">
+            <br><span class="todayWeather" id="weatherToday1"></span>
+            <br><span class="todayWeather" id="weatherToday2"></span>
+        </div>
+    </div>
+    <div class="logo">
+        <a href="index.html"><img src="images/logo.png" style="height: 60px;"></a>
+    </div>
+
+    <h1 id="title1">천공 모니터링(DSOL-1000)</h1>
+    <div class="firstLine">
+        <img id="fir" title="클릭시 확대" src="images/천공기.jpg">
+        <img id="sec" title="클릭시 확대" src="images/앱.jpg">  
+    </div>
+
+    <h1 id="title2">천공작업 원격 텔레메틱스</h1>
+    <div class="secondLine">
+        <img id="tel1" title="클릭시 확대" src="images/텔레메틱스1.png">
+        <img id="tel2" title="클릭시 확대" src="images/텔레메틱스2.png">
+    </div>
+
+    <script src="js/product.js"></script>
+</body>
+</html>

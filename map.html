@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Smart Dashboard</title>
+    <link rel="stylesheet" href="css/map.css">
+    <script type="text/javascript" src="//dapi.kakao.com/v2/maps/sdk.js?appkey=18e0427d16bfbd40dc0526789cba7b16"></script>
+</head>
+<body>
+    <div class="navbar">
+        <p class="date"></p>
+        <h1 class="time"></h1>
+        <a href="index.html"><img src="images/home_icon.png" class="icon"><p class="icon_p">home</p></a>
+        <a href="map.html"><img src="images/map_icon.png" class="icon"><p class="icon_p">map</p></a>
+        <a href="graph.html"><img src="images/graph_icon.png" class="icon"><p class="icon_p">graph</p></a>     
+        <a href="product.html" class="btn" title="트랙터 아이콘  제작자: Good Ware - Flaticon"><img src="images/product_icon.png" class="icon"><p class="icon_p">product</p></a>
+        <a href="https://yghahm.cafe24.com/loin.php" target="_blank"><h1 class="text">MDS</h1></a>
+        
+        <div class="now">
+            <img id="todayImg">
+            <br><span class="todayWeather" id="weatherToday1"></span>
+            <br><span class="todayWeather" id="weatherToday2"></span>
+        </div>
+    </div>
+    <div class="logo">
+        <a href="index.html"><img src="images/logo.png" style="height: 60px"></a>
+    </div>
+
+    <div class="map_wrap">
+        <div id="map"></div> 
+    </div>
+    
+    <div class="contents">
+        <div class="header"><p>총 14개의 기업</p></div>
+        <ul class="list">
+            <li class="li_c li0">서울건설기계(주)</li>
+            <li class="li_c li1">우리건설기계</li>
+            <li class="li_c li2">봉래건설기계(주)</li>
+            <li class="li_c li3">태산건설기계</li>
+            <li class="li_c li4">(주)비젼시스템</li>
+            <li class="li_c li5">정우건설중기</li>
+            <li class="li_c li6">(주)에스지오</li>
+            <li class="li_c li7">대웅건설(주)</li>
+            <li class="li_c li8">영주대형건설기계</li>
+            <li class="li_c li9">영암건설장비(주)</li>
+            <li class="li_c li11">송광건설기계</li>
+            <li class="li_c li10">금성건설기계</li>
+            <li class="li_c li12">솔리메틱스</li>
+            <li class="li_c li13">한내건설(주)</li>
+        </ul>
+    </div>
+    
+    <script src="js/map.js"></script>    
+</body>
+</html>

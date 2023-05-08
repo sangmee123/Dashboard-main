@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Smart Dashboard</title>
+    <link rel="stylesheet" href="css/index.css">
+</head>
+<body>
+    <div class="navbar">
+        <p class="date"></p>
+        <h1 class="time"></h1>
+        <a href="index.html" class="btn"><img src="images/home_icon.png" class="icon"><p class="icon_p">Home</p></a>
+        <a href="map.html" class="btn"><img src="images/map_icon.png" class="icon"><p class="icon_p">Map</p></a>
+        <a href="graph.html" class="btn"><img src="images/graph_icon.png" class="icon"><p class="icon_p">Graph</p></a> 
+        <a href="product.html" class="btn"><img src="images/product_icon.png" class="icon"><p class="icon_p">Product</p></a>
+        <a href="https://yghahm.cafe24.com/loin.php" target="_blank"><h1 class="text">MDS</h1></a>
+        
+        <div class="now">
+            <img id="todayImg">
+            <br><span class="todayWeather" id="weatherToday1"></span>
+            <br><span class="todayWeather" id="weatherToday2"></span>
+        </div>
+    </div>
+    <div class="logo">
+        <a href="index.html"><img src="images/logo.png" style="height: 59px;"></a>
+    </div>
+
+    <a href="images/mobile_app.jpg"><img id="smartM" src="images/mobile_app.png" style="width: 180px;"></a>
+    
+    <ul class="btnFrame">       
+            <li id="mapBtn" class="firstLineBtn"><a href="map.html"><img src="images/map_icon.png" class="iconSize"><h3>Map</h3></a></li>
+            <li id="graphBtn" class="firstLineBtn"><a href="graph.html"><img src="images/graph_icon.png" class="iconSize"><h3>Graph</h3></a></li>
+    </ul>
+    <ul class="btnFrame2">
+            <li id="productBtn" class="secondLineBtn"><a href="product.html"><img src="images/product_icon.png" class="iconSize"><h3>Product</h3></a></li>
+            <li id="MDSBtn" class="secondLineBtn"><a href="https://yghahm.cafe24.com/loin.php" target="_blank"><img src="images/mds.jpg" class="mdsImg"></a></li>    
+    </ul>
+
+    <div id="product"></div>
+
+    <script src="js/index.js"></script>
+    <script src="https://code.jquery.com/jquery-3.6.4.min.js" integrity="sha256-oP6HI9z1XaZNBrJURtCoUT5SUnxFr8s3BzRl+cbzUq8=" crossorigin="anonymous"></script>
+</body>
+</html>
