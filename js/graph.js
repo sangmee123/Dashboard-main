@@ -29,7 +29,7 @@ updateGraph3();
 updateGraph4();
 updateGraph5();
 
-for(let i = 0; i < 14; i++) {
+for(let i = 0; i < 2; i++) {
     document.querySelector('.li' + i).addEventListener('click', function() {
         updateGraph1();
         updateGraph2();
@@ -633,8 +633,8 @@ function updateGraph5() {
         yAxis: yAxis,
         valueYField: "value",
         valueXField: "year",
-        stroke: chart.get("colors").getIndex(11),
-        fill: chart.get("colors").getIndex(11),
+        stroke: chart.get("colors").getIndex(30),
+        fill: chart.get("colors").getIndex(30),
         tooltip: am5.Tooltip.new(root, {
             labelText: "[bold]{name}[/]\n{valueX}: {valueY}"
         })
@@ -697,8 +697,8 @@ function onGeoOk(position){
               const city = document.querySelector("#weatherToday2");
               city.innerText = data.name;
               weather.innerText = `${data.weather[0].main} / ${data.main.temp}`;
-              //console.log(data);
+              console.log(data);
     });
 }
-function onGeoError(){ alert("Can't find you. No weather for you."); }
+function onGeoError(){ alert("Can't find you. No weather for you.");}
 navigator.geolocation.getCurrentPosition(onGeoOk,onGeoError);

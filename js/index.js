@@ -48,5 +48,5 @@ function onGeoOk(position){
               console.log(data);
     });
 }
-function onGeoError(){ alert("Can't find you. No weather for you.");}
+function onGeoError(){ alert("Can't find you. No weather for you."); }
 navigator.geolocation.getCurrentPosition(onGeoOk,onGeoError);
