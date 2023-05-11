@@ -120,7 +120,7 @@ for(let i = 0; i < 14; i++) {
     });
 }
 
-/* 날씨 */
+/* 날씨 API */
 const API_KEY = "7b25d47b3c02e4069876383772c479c5";
 
 function onGeoOk(position){
@@ -133,7 +133,7 @@ function onGeoOk(position){
         .then(response => response.json())
         .then(data => {
               var weatherIcon = `${data.weather[0].icon}`; 
-              var url = `http://openweathermap.org/img/wn/${weatherIcon}@2x.png`;
+              var url = `https://openweathermap.org/img/wn/${weatherIcon}@2x.png`;
               var img = document.querySelector('#todayImg');
               img.src = url;
 
@@ -144,7 +144,5 @@ function onGeoOk(position){
               console.log(data);
     });
 }
-function onGeoError(){
-    alert("Can't find you. No weather for you.");
-}
+function onGeoError(){ alert("Can't find you. No weather for you.");}
 navigator.geolocation.getCurrentPosition(onGeoOk,onGeoError);

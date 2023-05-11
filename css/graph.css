@@ -155,7 +155,7 @@ a {
     color: black;
 }
 
-h1 {
+#corporation_list {
     font-size: 25px;
     margin-top: 30px;
     margin-bottom: 30px;
@@ -176,6 +176,8 @@ h1 {
     list-style: none;
     padding: 15px;
 }
+
+.youngjin { margin-left: -2.5%; }
 
 .y {
     background: linear-gradient(to bottom, rgb(45, 67, 100), rgb(167, 179, 197));
@@ -300,7 +302,7 @@ h1 {
         height: 250px;
     }
 
-    h1 {
+    #corporation_list {
         font-size: 18px;
         margin-top: 20px;
         margin-bottom: 20px;
@@ -431,7 +433,7 @@ h1 {
         height: 300px;
     }
 
-    h1 {
+    #corporation_list {
         font-size: 18px;
         margin-top: 20px;
         margin-bottom: 20px;
@@ -535,7 +537,7 @@ h1 {
         height: 245px;
     }
 
-    h1 {
+    #corporation_list {
         font-size: 18px;
         margin-top: 20px;
         margin-bottom: 20px;
@@ -553,6 +555,8 @@ h1 {
         padding: 12px;
     }
     
+    .youngjin { margin-left: -5%; }
+
     .graph_bottom { margin-top: 0px; }
     
     /*chart3*/
