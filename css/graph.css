@@ -49,6 +49,7 @@ a {
     background-color: rgb(231, 230, 230);
     margin-left: 250px;
 }
+#logoImg { height: 59px; }
 
 #bg { margin-left: 250px; }
 
@@ -179,9 +180,7 @@ a {
 
 .youngjin { margin-left: -2.5%; }
 
-.y {
-    background: linear-gradient(to bottom, rgb(45, 67, 100), rgb(167, 179, 197));
-}
+.y { background: linear-gradient(to bottom, rgb(45, 67, 100), rgb(167, 179, 197)); }
 
 .hide { display: none; }
 
@@ -256,7 +255,7 @@ a {
     
     .now {
         text-align: center;
-        margin-top: -35px;
+        margin-top: -15px;
     }
     
     #todayImg { width: 100px; }
@@ -382,7 +381,7 @@ a {
         margin-left: 5%; 
     }
 
-    .now { margin-top: 0px; }
+    .now { margin-top: 20px; }
 
     #todayImg { width: 100px; }
     
@@ -497,9 +496,10 @@ a {
 
     /*chart1*/
     #container1 {
-        width: 70%;
+        width: 67.5%;
         height: 250px;  
         margin-top: 65px;
+        margin-left: 1%;
         float: left;
     }
 
@@ -526,7 +526,7 @@ a {
         width: 44%;
         height: 400px;
         margin-top: 65px;
-        margin-left: 58%;
+        margin-left: 55.3%;
         position: fixed;
         z-index: 1000;
     }

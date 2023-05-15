@@ -4,11 +4,9 @@ let clock = document.querySelector('.time');
 
 function getTime() {
     const today = new Date();
-
     const year = today.getFullYear();
     const month = today.getMonth() + 1;
     const date = today.getDate();
-
     const h = today.getHours();
     const m = today.getMinutes();
 
@@ -18,9 +16,7 @@ function getTime() {
     clock.innerHTML = `${h<10 ? `0${h}`:h}:${m<10 ? `0${m}`:m}`
 }
 
-function init_Clock() {
-    setInterval(getTime, 1000);
-}
+function init_Clock() { setInterval(getTime, 1000); }
 
 init_Clock();
 updateGraph1();
@@ -53,9 +49,7 @@ function updateGraph1() {
 
         title: {
             text: 'pressure',
-            style: {
-                color: 'black'
-            }
+            style: { color: 'black' }
         },
 
         pane: {
@@ -111,9 +105,7 @@ function updateGraph1() {
                 step: 2,
                 rotation: 'auto'
             },
-            title: {
-                text: 'kgf/cm2'
-            },
+            title: { text: 'kgf/cm2' },
             plotBands: [{
                 from: 0,
                 to: 120,
@@ -150,9 +142,7 @@ function updateGraph1() {
                 if (newVal < 0 || newVal > 200) {
                     newVal = point.y - inc;
                 }
-
                 point.update(newVal);
-
             }, 5000);
         }
     });
@@ -172,7 +162,6 @@ function updateGraph2() {
     root.setThemes([
       am5themes_Animated.new(root)
     ]);
-    
     
     // Create chart
     // https://www.amcharts.com/docs/v5/charts/xy-chart/
@@ -264,7 +253,6 @@ function updateGraph2() {
         dateFields: ["year"]
     });
     
-
     // Update data every second
     setInterval(function () {
         addData();
@@ -292,8 +280,7 @@ function updateGraph3() {
     // https://www.amcharts.com/docs/v5/concepts/themes/
     root.setThemes([
       am5themes_Animated.new(root)
-    ]);
-    
+    ]); 
     
     // Create chart
     // https://www.amcharts.com/docs/v5/charts/xy-chart/
@@ -382,7 +369,6 @@ function updateGraph3() {
         dateFormat: "yyyy-MM-dd HH:mm:ss", //yyyy-MM-dd HH:mm:ss
         dateFields: ["year"]
     });
-    
 
     // Update data every second
     setInterval(function () {
@@ -407,7 +393,6 @@ function updateGraph4() {
     root.setThemes([
       am5themes_Animated.new(root)
     ]);
-    
     
     // Create chart
     // https://www.amcharts.com/docs/v5/charts/xy-chart/
@@ -438,7 +423,6 @@ function updateGraph4() {
     // https://www.amcharts.com/docs/v5/charts/xy-chart/cursor/
     var cursor = chart.set("cursor", am5xy.XYCursor.new(root, {}));
     cursor.lineY.set("visible", false);
-    
     
     // Create axes
     // https://www.amcharts.com/docs/v5/charts/xy-chart/axes/
@@ -572,7 +556,6 @@ function updateGraph5() {
       am5themes_Animated.new(root)
     ]);
     
-    
     // Create chart
     // https://www.amcharts.com/docs/v5/charts/xy-chart/
     var chart = root.container.children.push(am5xy.XYChart.new(root, {
@@ -660,7 +643,6 @@ function updateGraph5() {
         dateFormat: "yyyy-MM-dd HH:mm:ss", //yyyy-MM-dd HH:mm:ss
         dateFields: ["year"]
     });
-    
 
     // Update data every second
     setInterval(function () {

@@ -67,7 +67,7 @@ a {
     margin-top: 80px;
 }
 
-#todayImg { width: 130px; }
+.todayImg { width: 130px; }
 
 .todayWeather {
     color: white;

@@ -4,11 +4,9 @@ let clock = document.querySelector('.time');
 
 function getTime() {
     const today = new Date();
-
     const year = today.getFullYear();
     const month = today.getMonth() + 1;
     const date = today.getDate();
-
     const h = today.getHours();
     const m = today.getMinutes();
 
@@ -18,10 +16,7 @@ function getTime() {
     clock.innerHTML = `${h<10 ? `0${h}`:h}:${m<10 ? `0${m}`:m}`
 }
 
-function init_Clock() {
-    setInterval(getTime, 1000);
-}
-
+function init_Clock() { setInterval(getTime, 1000); }
 init_Clock();
 
 /* 날씨 API */

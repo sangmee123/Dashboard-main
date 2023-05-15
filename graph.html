@@ -39,7 +39,7 @@
         </div>
     </div>
     <div class="logo">
-        <a href="index.html"><img src="images/logo.png" style="height: 59px;"></a>
+        <a href="index.html"><img src="images/logo.png" id="logoImg"><img id="todayImg"></a>
     </div>
 
     <div class="graph_top">
@@ -93,7 +93,6 @@
     <script src="js/graph.js"></script>
     <script src="//code.jquery.com/jquery.min.js"></script> 
     <script>
-        
         $('.youngjin').on('click', function() {
             $('.hide').css('display') == 'none' ?
             $('.hide').css('display', 'block') : 
@@ -116,39 +115,26 @@
             }).done(function(data) {
                 data = JSON.parse(data);
                 if(data.result == "success") {
-                    arr1.push({
-                        value: data.pressure
-                    });
-                    
+                    arr1.push({ value: data.pressure });
                     arr2.push({ 
                         year: data.collecttime, 
-                        value: Math.abs(data.max_depth / 1000) 
-                    });
-
+                        value: Math.abs(data.max_depth / 1000) });
                     arr3.push({ 
                         year: data.collecttime,
-                        value: Math.abs(data.torque / 100)
-                    });
+                        value: Math.abs(data.torque / 100) });
                     
                     let inX = data.inclination_x;
                     let inY = data.inclination_y;
-                    if(inX > 18000) {
-                        inX = 36000 - data.inclination_x;
-                    }
-                    if(inY > 18000) {
-                        inY = 36000 - data.inclination_y;
-                    }
+                    if(inX > 18000) inX = 36000 - data.inclination_x;
+                    if(inY > 18000) inY = 36000 - data.inclination_y;
                     arr4.push({
                         date1: data.collecttime,
                         value1: Math.abs(inX / 100),
                         value2: Math.abs(inY / 100),
-                        date2: data.collecttime
-                    });
-              
+                        date2: data.collecttime });
                     arr5.push({ 
                         year: data.collecttime,
-                        value: Math.abs(data.beat_position)
-                    });
+                        value: Math.abs(data.beat_position) });
 
                     $('#connect').text("DB 연결 성공");
                 }
