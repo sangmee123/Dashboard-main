@@ -56,8 +56,8 @@
                 <ul class="list">
                     <a href="#" class="li_c wth youngjin">영진 기계</a>
                     <ul class="y">
-                        <li class="li_c li0 hide c">9호기</li>
-                        <li class="li_c li1 hide c">10호기</li>
+                        <li class="li_c li0 hide c">9호기</li> <!-- module_idx=14 -->
+                        <li class="li_c li1 hide c">10호기</li> <!-- module_idx=19 -->
                     </ul>
                     <a href="#" class="li_c wth enc">우복이엔씨(주)</a> 
                     <ul class="e">
@@ -105,21 +105,70 @@
         let arr3 = []; //torque
         let arr4 = []; //inclination(x, y)
         let arr5 = []; //beat_position
-
-        GET_db();
-        function GET_db() {
+        
+        let arr2_1 = []; //max_depth
+        let arr3_1 = []; //torque
+        let arr4_1 = []; //inclination(x, y)
+        let arr5_1 = []; //beat_position
+        
+        GET_db1();   
+        let timer1 = setInterval(GET_db2, period);// 3초 단위로 갱신 처리
+        function GET_db1() {
             $.ajax({
                 url: "GET_db.php",
                 type: 'get',
                 async: false,
             }).done(function(data) {
                 data = JSON.parse(data);
+                for(i in data){
+                    if(data[i].result == "success") {
+                        arr2_1.push({ 
+                            year: data[i].collecttime, 
+                            value: Math.abs(data[i].max_depth / 1000) });
+                        arr3_1.push({ 
+                            year: data[i].collecttime,
+                            value: Math.abs(data[i].torque / 100) });
+                        
+                        let inX = data[i].inclination_x;
+                        let inY = data[i].inclination_y;
+                        if(inX > 18000) inX = 36000 - data[i].inclination_x;
+                        if(inY > 18000) inY = 36000 - data[i].inclination_y;
+                        arr4_1.push({
+                            date1: data[i].collecttime,
+                            value1: Math.abs(inX / 1000),
+                            value2: Math.abs(inY / 1000),
+                            date2: data[i].collecttime });
+                        arr5_1.push({ 
+                            year: data[i].collecttime,
+                            value: Math.abs(data[i].beat_position) });
+
+                        $('#connect').text("DB 연결 성공");
+                    }
+                } 
+            }).fail(function(data) {
+                $('#connect').text("HTTP 요청 실패");
+            });
+        }
+  
+        console.log("Torque(All Data)", arr2_1);  
+        let arr2_2 = []; //max_depth
+        let arr3_2 = []; //torque
+        let arr4_2 = []; //inclination(x, y)
+        let arr5_2 = []; //beat_position
+        
+        function GET_db2() {
+            $.ajax({
+                url: "GET_db2.php",
+                type: 'get',
+                async: false,
+            }).done(function(data) {
+                data = JSON.parse(data);
                 if(data.result == "success") {
                     arr1.push({ value: data.pressure });
-                    arr2.push({ 
+                    arr2_2.push({ 
                         year: data.collecttime, 
                         value: Math.abs(data.max_depth / 1000) });
-                    arr3.push({ 
+                    arr3_2.push({ 
                         year: data.collecttime,
                         value: Math.abs(data.torque / 100) });
                     
@@ -127,22 +176,26 @@
                     let inY = data.inclination_y;
                     if(inX > 18000) inX = 36000 - data.inclination_x;
                     if(inY > 18000) inY = 36000 - data.inclination_y;
-                    arr4.push({
+                    arr4_2.push({
                         date1: data.collecttime,
-                        value1: Math.abs(inX / 100),
-                        value2: Math.abs(inY / 100),
+                        value1: Math.abs(inX / 1000),
+                        value2: Math.abs(inY / 1000),
                         date2: data.collecttime });
-                    arr5.push({ 
+                    arr5_2.push({ 
                         year: data.collecttime,
                         value: Math.abs(data.beat_position) });
 
+                    arr2 = arr2_1.concat(arr2_2);
+                    arr3 = arr3_1.concat(arr3_2);
+                    arr4 = arr4_1.concat(arr4_2);
+                    arr5 = arr5_1.concat(arr5_2); 
+                            
                     $('#connect').text("DB 연결 성공");
                 }
             }).fail(function(data) {
                 $('#connect').text("HTTP 요청 실패");
             });
-            let timer1 = setTimeout("GET_db()", period);// 3초 단위로 갱신 처리
-        }
+        }         
     </script>   
 </body>
 </html>

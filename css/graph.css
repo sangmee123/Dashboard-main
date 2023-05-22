@@ -74,7 +74,7 @@ a {
 
 /*chart1*/
 #container1 {
-    height: 400px;   
+    height: 450px;   
     border-radius: 15px;
     margin-top: 60px;   
 }
@@ -82,7 +82,7 @@ a {
 .highcharts-figure1,
 .highcharts-data-table table {
     display: inline-block;
-    min-width: 395px;
+    min-width: 495px;
     max-width: 300px; 
     margin-left: 320px;  
     margin-right: 50px;
@@ -128,9 +128,9 @@ a {
 /*chart2*/
 #chartdiv {
     margin-top: 60px;
-    margin-left: 760px;
-    width: 750px;
-    height: 400px;
+    margin-left: 850px;
+    width: 850px;
+    height: 450px;
     background-color: rgba(29, 49, 68, 0.4);
     border-radius: 15px;
     position: fixed;
@@ -139,13 +139,13 @@ a {
 /*기업 리스트*/
 .contents {
     margin-top: 60px;
-    margin-left: 1555px;
+    margin-left: 1735px;
     position: fixed;
 }
 
 #menu {
     width: 450px;
-    height: 400px;
+    height: 450px;
     text-align: center;
     color: white;
     background-color: rgba(24, 38, 51, 0.4);
@@ -184,12 +184,12 @@ a {
 
 .hide { display: none; }
 
-.graph_bottom { margin-top: 15px; }
+.graph_bottom { margin-top: 55px; }
 
 /*chart3*/
 #chartdiv3 {
-    height: 400px;
-    width: 395px;
+    height: 450px;
+    width: 495px;
     background-color: rgba(24, 38, 51, 0.4);
     margin-left: 320px;
     float: left;
@@ -198,9 +198,9 @@ a {
 
 /*chart4*/
 #chartdiv4 {
-    margin-left: 760px;
-    width: 750px;
-    height: 400px;
+    margin-left: 850px;
+    width: 850px;
+    height: 450px;
     background-color: rgba(24, 38, 51, 0.4);
     border-radius: 15px;
     position: fixed;
@@ -209,8 +209,8 @@ a {
 /*chart5*/
 #chartdiv5 {    
     width: 450px;
-    height: 400px;
-    margin-left: 1555px;
+    height: 450px;
+    margin-left: 1735px;
     background-color: rgba(24, 38, 51, 0.4);
     border-radius: 15px;
     position: fixed;

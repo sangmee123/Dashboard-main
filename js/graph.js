@@ -17,16 +17,15 @@ function getTime() {
 }
 
 function init_Clock() { setInterval(getTime, 1000); }
-
 init_Clock();
 updateGraph1();
 updateGraph2();
 updateGraph3();
 updateGraph4();
 updateGraph5();
-
+ 
 for(let i = 0; i < 2; i++) {
-    document.querySelector('.li' + i).addEventListener('click', function() {
+    document.querySelector('.li' + i).addEventListener('click', function() {       
         updateGraph1();
         updateGraph2();
         updateGraph3();
@@ -34,6 +33,9 @@ for(let i = 0; i < 2; i++) {
         updateGraph5();
     });
 }
+
+var m_IDX = 19;
+
 
 /*chart1*/
 function updateGraph1() { 
@@ -231,17 +233,15 @@ function updateGraph2() {
             labelText: "[bold]{name}[/]\n{valueX}: {valueY}"
         })
     }));
-
     series.bullets.push(function () {
         return am5.Bullet.new(root, {
           locationX:undefined,
           sprite: am5.Circle.new(root, {
-            radius: 4,
+            radius: 3,
             fill: series.get("fill")
           })
         })
     });
-
     series.strokes.template.setAll({
         strokeWidth: 3
     });
@@ -262,7 +262,7 @@ function updateGraph2() {
         // Data
         let data = arr2;
         series.data.setAll(data);
-    }
+    } 
     series.appear(1000);
     chart.appear(1000, 100);
 }
@@ -348,17 +348,15 @@ function updateGraph3() {
             labelText: "[bold]{name}[/]\n{valueX}: {valueY}"
         })
     }));
-
     series.bullets.push(function () {
         return am5.Bullet.new(root, {
           locationX:undefined,
           sprite: am5.Circle.new(root, {
-            radius: 4,
+            radius: 3,
             fill: series.get("fill")
           })
         })
     });
-
     series.strokes.template.setAll({
         strokeWidth: 3
     });
@@ -465,7 +463,7 @@ function updateGraph4() {
         return am5.Bullet.new(root, {
           locationX:undefined,
           sprite: am5.Circle.new(root, {
-            radius: 4,
+            radius: 3,
             fill: series.get("fill")
           })
         })
@@ -493,7 +491,7 @@ function updateGraph4() {
         return am5.Bullet.new(root, {
           locationX:undefined,
           sprite: am5.Circle.new(root, {
-            radius: 4,
+            radius: 3,
             fill: series2.get("fill")
           })
         })
@@ -627,7 +625,7 @@ function updateGraph5() {
         return am5.Bullet.new(root, {
           locationX:undefined,
           sprite: am5.Circle.new(root, {
-            radius: 4,
+            radius: 3,
             fill: series.get("fill")
           })
         })
