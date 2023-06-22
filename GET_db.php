@@ -9,15 +9,20 @@
     $now_date = date("Y-m-d");
     $result_array=array();
 
-    $m_IDX = 19;
-    //$m_IDX = "<script src='js/graph.js'>document.write(m_IDX);</script>";
+    /* 
+        9호기 module_idx = 8 
+       10호기 module_idx = 14  
+       11호기 module_idx = 19 
+    */  
+    $m_IDX = $_POST['m_IDX'];
+
     /* DB 연결 확인 */
     if($conn){ 
         /* SELECT 예제 */
-        $sql = "SELECT * FROM raw_yjsensing WHERE module_idx=${m_IDX} AND collecttime BETWEEN '${now_date} 00:00:00' AND '${now_date} 23:59:59' AND MOD(idx,1000)=0 ORDER BY collecttime ASC;"; 
+        $sql = "SELECT idx, module_idx, pressure, torque, inclination_x, inclination_y, max_depth, collecttime FROM raw_yjsensing WHERE module_idx=${m_IDX} AND collecttime BETWEEN '${now_date} 00:00:00' AND '${now_date} 23:59:59' AND MOD(idx,1000)=0 ORDER BY collecttime ASC;"; 
         if ($result = mysqli_query($conn, $sql)) {
             while($row=mysqli_fetch_array($result)){
-                array_push($result_array,array("result" => 'success',"Error" => 'None',"idx" => $row["idx"],"module_idx" => $row["module_idx"],"work_unit_idx" => $row["work_unit_idx"],"pressure" => $row["pressure"],"torque" => $row["torque"],"inclination_x" => $row["inclination_x"],"inclination_y" => $row["inclination_y"],"rod_count" => $row["rod_count"],"max_depth" => $row["max_depth"],"beat_position" => $row["beat_position"],"switch" => $row["switch"],"collecttime" => $row["collecttime"]));
+                array_push($result_array,array("result" => 'success',"Error" => 'None',"idx" => $row["idx"],"module_idx" => $row["module_idx"],"pressure" => $row["pressure"],"torque" => $row["torque"],"inclination_x" => $row["inclination_x"],"inclination_y" => $row["inclination_y"],"max_depth" => $row["max_depth"],"collecttime" => $row["collecttime"]));
             }
             $msg = json_encode($result_array);
         } else {

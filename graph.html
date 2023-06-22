@@ -25,21 +25,23 @@
     <div class="navibar"> 
         <p class="date"></p>
         <h1 class="time"></h1>
-        <a href="index.html" class="btn orange"><img src="images/home_icon.png" class="icon"><p class="icon_p">home</p></a>
-        <a href="map.html" class="btn orange"><img src="images/map_icon.png" class="icon"><p class="icon_p">map</p></a>
-        <a href="graph.html" class="btn orange"><img src="images/graph_icon.png" class="icon"><p class="icon_p">graph</p></a>
-        <a href="product.html" class="btn orange" title="트랙터 아이콘  제작자: Good Ware - Flaticon"><img src="images/product_icon.png" class="icon"><p class="icon_p">product</p></a>
-        <a href="https://yghahm.cafe24.com/loin.php" target="_blank" class="orange"><h1 class="text">MDS</h1></a>
+        <a href="index.html" class="orange"><img src="images/home_icon.png" class="icon"><p class="icon_p">home</p></a>
+        <a href="map.html" class="orange"><img src="images/map_icon.png" class="icon"><p class="icon_p">map</p></a>
+        <a href="graph.html" class="orange"><img src="images/graph_icon.png" class="icon"><p class="icon_p">graph</p></a>
+        <a href="product.html" class="orange" title="트랙터 아이콘  제작자: Good Ware - Flaticon"><img src="images/product_icon.png" class="icon"><p class="icon_p">product</p></a>
+        <a href="https://yghahm.cafe24.com/loin.php" target="_blank"><h1 class="text">MDS</h1></a>
  
         <div class="now">
             <img id="todayImg">
             <br><span class="todayWeather" id="weatherToday1"></span>
             <br><span class="todayWeather" id="weatherToday2"></span>
-            <p id="connect">db연결 중...</p>
+            <p id="connect" style="font-size:12px;">db연결 중...</p>
         </div>
     </div>
     <div class="logo">
-        <a href="index.html"><img src="images/logo.png" id="logoImg"><img id="todayImg"></a>
+        <a href="index.html"><img src="images/logo.png"></a>
+        <a href="intro.html"><h4 class="information">회사소개</h4></a> 
+        <a href="partner.html"><h4 class="information">협력사</h4></a>
     </div>
 
     <div class="graph_top">
@@ -56,8 +58,9 @@
                 <ul class="list">
                     <a href="#" class="li_c wth youngjin">영진 기계</a>
                     <ul class="y">
-                        <li class="li_c li0 hide c">9호기</li> <!-- module_idx=14 -->
-                        <li class="li_c li1 hide c">10호기</li> <!-- module_idx=19 -->
+                        <li class="li_c li0 hide c">9호기</li> 
+                        <li class="li_c li1 hide c">10호기</li> 
+                        <li class="li_c li2 hide c">11호기</li> 
                     </ul>
                     <a href="#" class="li_c wth enc">우복이엔씨(주)</a> 
                     <ul class="e">
@@ -93,30 +96,90 @@
     <script src="js/graph.js"></script>
     <script src="//code.jquery.com/jquery.min.js"></script> 
     <script>
+        let m_IDX = 19;
+        
         $('.youngjin').on('click', function() {
             $('.hide').css('display') == 'none' ?
             $('.hide').css('display', 'block') : 
             $('.hide').css('display', 'none');
         });
 
-        const period = 3000;
+        /* All Data(Before + Live) */
         let arr1 = []; //pressure
         let arr2 = []; //max_depth
         let arr3 = []; //torque
         let arr4 = []; //inclination(x, y)
         let arr5 = []; //beat_position
-        
+         /* Before Data */
         let arr2_1 = []; //max_depth
         let arr3_1 = []; //torque
         let arr4_1 = []; //inclination(x, y)
         let arr5_1 = []; //beat_position
         
-        GET_db1();   
-        let timer1 = setInterval(GET_db2, period);// 3초 단위로 갱신 처리
+        /*기업 리스트에서 영진기계 목록을 선택시*/
+        $('.li0').on('click', function() { 
+            m_IDX = 8; //영진기계-9호기  
+            arr2_1 = []; arr2_2 = []; arr2 = []; //max_depth
+            arr3_1 = []; arr3_2 = []; arr3 = []; //torque
+            arr4_1 = []; arr4_2 = []; arr4 = []; //inclination(x, y)
+            arr5_1 = []; arr5_2 = []; arr5 = []; //beat_position
+            GET_db1(); //데이터 초기화
+            $('.li0').css('backgroundColor', 'white');
+            $('.li0').css('color', 'black');
+            $('.li1').css('backgroundColor', '');
+            $('.li2').css('backgroundColor', '');
+
+            $('#chartdiv').css('backgroundColor', 'rgba(91, 96, 101, 0.5)');
+            $('#menu').css('backgroundColor', 'rgba(91, 96, 101, 0.5)');
+            $('#chartdiv3').css('backgroundColor', 'rgba(91, 96, 101, 0.5)');
+            $('#chartdiv4').css('backgroundColor', 'rgba(91, 96, 101, 0.5)');
+            $('#chartdiv5').css('backgroundColor', 'rgba(91, 96, 101, 0.5)');
+        });
+        $('.li1').on('click', function() { 
+            m_IDX = 14; //영진기계-10호기 
+            arr2_1 = []; arr2_2 = []; arr2 = []; //max_depth
+            arr3_1 = []; arr3_2 = []; arr3 = []; //torque
+            arr4_1 = []; arr4_2 = []; arr4 = []; //inclination(x, y)
+            arr5_1 = []; arr5_2 = []; arr5 = []; //beat_position
+            GET_db1(); //데이터 초기화
+            $('.li1').css('backgroundColor', 'white');
+            $('.li1').css('color', 'black');
+            $('.li0').css('backgroundColor', '');
+            $('.li2').css('backgroundColor', '');
+
+            $('#chartdiv').css('backgroundColor', 'rgba(49, 69, 70, 0.4)');
+            $('#menu').css('backgroundColor', 'rgba(49, 69, 70, 0.4)');
+            $('#chartdiv3').css('backgroundColor', 'rgba(49, 69, 70, 0.4)');
+            $('#chartdiv4').css('backgroundColor', 'rgba(49, 69, 70, 0.4)');
+            $('#chartdiv5').css('backgroundColor', 'rgba(49, 69, 70, 0.4)');
+        });
+        $('.li2').on('click', function() { 
+            m_IDX = 19; //영진기계-11호기 
+            arr2_1 = []; arr2_2 = []; arr2 = []; //max_depth
+            arr3_1 = []; arr3_2 = []; arr3 = []; //torque
+            arr4_1 = []; arr4_2 = []; arr4 = []; //inclination(x, y)
+            arr5_1 = []; arr5_2 = []; arr5 = []; //beat_position
+            $('.li2').css('backgroundColor', 'white');
+            $('.li2').css('color', 'black');
+            $('.li0').css('backgroundColor', '');
+            $('.li1').css('backgroundColor', '');
+
+            $('#chartdiv').css('backgroundColor', 'rgba(24, 38, 51, 0.4)');
+            $('#menu').css('backgroundColor', 'rgba(24, 38, 51, 0.4)');
+            $('#chartdiv3').css('backgroundColor', 'rgba(24, 38, 51, 0.4)');
+            $('#chartdiv4').css('backgroundColor', 'rgba(24, 38, 51, 0.4)');
+            $('#chartdiv5').css('backgroundColor', 'rgba(24, 38, 51, 0.4)');
+            GET_db1(); //데이터 초기화
+        });
+
+        const period = 3000;
+        GET_db1(); /* Before Data */   
+        setInterval(GET_db2, period);// 3초 단위로 갱신 처리
         function GET_db1() {
             $.ajax({
                 url: "GET_db.php",
-                type: 'get',
+                type: "POST", 
+                data: { m_IDX: m_IDX },
                 async: false,
             }).done(function(data) {
                 data = JSON.parse(data);
@@ -124,7 +187,7 @@
                     if(data[i].result == "success") {
                         arr2_1.push({ 
                             year: data[i].collecttime, 
-                            value: Math.abs(data[i].max_depth / 1000) });
+                            value: Math.abs(data[i].max_depth / 100) });
                         arr3_1.push({ 
                             year: data[i].collecttime,
                             value: Math.abs(data[i].torque / 100) });
@@ -135,8 +198,8 @@
                         if(inY > 18000) inY = 36000 - data[i].inclination_y;
                         arr4_1.push({
                             date1: data[i].collecttime,
-                            value1: Math.abs(inX / 1000),
-                            value2: Math.abs(inY / 1000),
+                            value1: Math.abs(inX / 100),
+                            value2: Math.abs(inY / 100),
                             date2: data[i].collecttime });
                         arr5_1.push({ 
                             year: data[i].collecttime,
@@ -149,8 +212,8 @@
                 $('#connect').text("HTTP 요청 실패");
             });
         }
-  
-        console.log("Torque(All Data)", arr2_1);  
+
+        /* Live Data */
         let arr2_2 = []; //max_depth
         let arr3_2 = []; //torque
         let arr4_2 = []; //inclination(x, y)
@@ -159,15 +222,16 @@
         function GET_db2() {
             $.ajax({
                 url: "GET_db2.php",
-                type: 'get',
+                type: "POST", 
+                data: { m_IDX: m_IDX },
                 async: false,
             }).done(function(data) {
                 data = JSON.parse(data);
                 if(data.result == "success") {
-                    arr1.push({ value: data.pressure });
+                    arr1.push({ value: data.pressure }); // pressure - 실시간 데이터만 출력
                     arr2_2.push({ 
                         year: data.collecttime, 
-                        value: Math.abs(data.max_depth / 1000) });
+                        value: Math.abs(data.max_depth / 100) });
                     arr3_2.push({ 
                         year: data.collecttime,
                         value: Math.abs(data.torque / 100) });
@@ -178,13 +242,14 @@
                     if(inY > 18000) inY = 36000 - data.inclination_y;
                     arr4_2.push({
                         date1: data.collecttime,
-                        value1: Math.abs(inX / 1000),
-                        value2: Math.abs(inY / 1000),
+                        value1: Math.abs(inX / 100),
+                        value2: Math.abs(inY / 100),
                         date2: data.collecttime });
                     arr5_2.push({ 
                         year: data.collecttime,
                         value: Math.abs(data.beat_position) });
 
+                    /* Before + Live => Data 이어 붙이기 */
                     arr2 = arr2_1.concat(arr2_2);
                     arr3 = arr3_1.concat(arr3_2);
                     arr4 = arr4_1.concat(arr4_2);

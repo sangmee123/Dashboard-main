@@ -1,0 +1,139 @@
+
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta property="og:title" content="Dashboard" /> 
+    <meta property="og:url" content="https://solimatics.co.kr" />
+    <meta property="og:type" content="website" />
+    <meta property="og:image" content="images/desktop.jpg" /> 
+    <meta property="og:description" content="프론트엔드 개발자 이상미" />
+
+    <title>Smart Dashboard</title>
+    <link rel="stylesheet" href="css/intro.css">
+    <script type="text/javascript" src="//dapi.kakao.com/v2/maps/sdk.js?appkey=26f2888fc97b6f8dc72676ac67a9289d"></script>
+</head>
+
+<body>
+    <div class="navibar">
+        <p class="date"></p>
+        <h1 class="time"></h1>
+        <a href="index.html"><img src="images/home_icon.png" class="icon"><p class="icon_p">Home</p></a>
+        <a href="map.html"><img src="images/map_icon.png" class="icon"><p class="icon_p">Map</p></a>
+        <a href="graph.html"><img src="images/graph_icon.png" class="icon"><p class="icon_p">Graph</p></a> 
+        <a href="product.html"><img src="images/product_icon.png" class="icon"><p class="icon_p">Product</p></a>
+        <a href="https://yghahm.cafe24.com/loin.php" target="_blank"><h1 class="text">MDS</h1></a>
+        
+        <div class="now">
+            <img id="todayImg">
+            <br><span class="todayWeather" id="weatherToday1"></span>
+            <br><span class="todayWeather" id="weatherToday2"></span>
+        </div>
+        
+    </div>
+    <div class="logo">
+        <a href="index.html"><img src="images/logo.png"></a>
+        <a href="intro.html"><h4 class="information">회사소개</h4></a> 
+        <a href="partner.html"><h4 class="information">협력사</h4></a>
+    </div>
+
+    <div class="container">
+        <h3>찾아오시는 길</h3>
+        <hr>
+        <div class="map_wrap">
+            <div id="map"></div>
+        </div>
+        
+        <img src="images/특허.png" id="patent">
+        <table border="1" id="webTable">
+            <thead>
+                <th>권리구분</th><th>등록명칭</th><th>등록번호</th><th>등록년월일</th><th>최종권리자</th>
+            </thead>
+            <tbody>
+                <tr>
+                    <th>특허</th>
+                    <td class="tdWidth">증강현실을 이용한 유지 보수 시스템 및 이의 제어방법</td>
+                    <td>10-1876856-2</td>
+                    <td>2018.07.04</td>
+                    <td>솔리메틱스</td>
+                </tr>
+                <tr>
+                    <th>특허(출원)</th>
+                    <td class="tdWidth">굴삭기의 버켓 위치 확인 시스템 이를 이용한 버켓 위치 확인 방법</td>
+                    <td>10-2019-0156373-2</td>
+                    <td>2019.11.29</td>
+                    <td>솔리메틱스</td>
+                </tr>
+                <tr>
+                    <th>특허(출원)</th>
+                    <td class="tdWidth">RSM 모듈을 포함하는 천공기</td>
+                    <td>10-2021-0177049</td>
+                    <td>2021.12.10</td>
+                    <td>솔리메틱스</td>
+                </tr>
+                <tr>
+                    <th>특허(출원)</th>
+                    <td class="tdWidth">위치 및 충격모니터링 기반 건설현장용 스마트 안전관리 시스템 </td>
+                    <td>10-2021-0177050</td>
+                    <td>2021.12.10</td>
+                    <td>솔리메틱스</td>
+                </tr>
+            </tbody>
+        </table>
+        <table border="1" id="file">
+            <tr>
+                <th scope="row">파일</th>
+                <td>
+                    <ul>
+                        <li><img src="images/ico_pdf.gif"> <a href="건설장비 스마트 솔루션(솔리메틱스IR자료_20230616).pdf" download="" id="file">건설장비 스마트 솔루션(솔리메틱스IR자료_20230616).pdf</a></li>
+                    </ul>
+                </td>
+            </tr>
+        </table>
+
+        <table border="1" id="mobTable">
+            <thead>
+                <th>권리구분</th><th>주요내용</th><th>최종 권리자</th>
+            </thead>
+            <tbody>
+                <tr>
+                    <th>특허</th>
+                    <td>등록명칭: 증강현실을 이용한 유지 보수 시스템 및 이의 제어방법
+                        <br>등록번호: 10-1876856-2
+                        <br>등록년월일: 2018.07.04
+                    </td>                    
+                    <td>솔리메틱스</td>
+                </tr>
+                <tr>
+                    <th>특허<br>(출원)</th>
+                    <td>등록명칭: 굴삭기의 버켓 위치 확인 시스템 이를 이용한 버켓 위치 확인 방법
+                        <br>등록번호: 10-2019-0156373-2
+                        <br>등록년월일: 2019.11.29
+                    </td>
+                    <td>솔리메틱스</td>
+                <tr>
+                    <th>특허<br>(출원)</th>
+                    <td>등록명칭: RSM 모듈을 포함하는 천공기
+                        <br>등록번호: 10-2021-0177049
+                        <br>등록년월일: 2021.12.10
+                    </td>
+                    <td>솔리메틱스</td>
+                </tr>
+                <tr>
+                    <th>특허<br>(출원)</th>
+                    <td>등록명칭: 위치 및 충격모니터링 기반 건설현장용 스마트 안전관리 시스템 
+                        <br>등록번호: 10-2021-0177050
+                        <br>등록년월일: 2021.12.10
+                    </td>
+                    <td>솔리메틱스</td>
+                </tr>
+            </tbody>
+        </table>
+        </table>
+    </div>
+
+    <script src="js/intro.js"></script>    
+</body>
+</html>

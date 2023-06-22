@@ -6,6 +6,7 @@
 body {
     background: linear-gradient(to bottom, rgb(45, 67, 100), rgb(143, 151, 155), rgb(45, 67, 100));
 }
+/* 왼쪽 네비바 */
 .navibar {
     width: 250px;
     height: 100%;
@@ -31,7 +32,7 @@ a {
     font-weight: bold;
     text-decoration: none; 
     color: black;
-}.orange:hover {
+}a:hover {
     color: rgba(237, 152, 7);
 }
 .icon {
@@ -43,20 +44,27 @@ a {
     font-size: 20px;
 }
 
+.text {
+    text-align: center;
+    font-size: 40px;
+    margin-top: 100px;
+}
+
+/* Logo 네비바 */
 .logo {
     width: 100%;
     height: 70px;
     background-color: rgb(231, 230, 230);
     margin-left: 250px;
-}
-#logoImg { height: 59px; }
+}.logo img { height: 70px; }
 
-#bg { margin-left: 250px; }
-
-.text {
-    text-align: center;
-    font-size: 40px;
-    margin-top: 100px;
+.information {
+    display: inline-block;
+    height: 82px;
+    color: rgb(61, 59, 59);
+    font-size: 18px;
+    vertical-align: middle;
+    margin-left: 100px;
 }
 
 /* 날씨 */
@@ -64,9 +72,7 @@ a {
     text-align: center;
     margin-top: 80px;
 }
-
-#todayImg { width: 130px; }
-
+.todayImg { width: 130px; }
 .todayWeather {
     color: white;
     font-size: 20px;
@@ -131,7 +137,7 @@ a {
     margin-left: 850px;
     width: 850px;
     height: 450px;
-    background-color: rgba(29, 49, 68, 0.4);
+    background-color: rgba(24, 38, 51, 0.4);
     border-radius: 15px;
     position: fixed;
 }
@@ -150,8 +156,7 @@ a {
     color: white;
     background-color: rgba(24, 38, 51, 0.4);
     border-radius: 15px;
-}
-#menu .li_c:hover { 
+}#menu .li_c:hover { 
     background-color: white; 
     color: black;
 }
@@ -179,9 +184,6 @@ a {
 }
 
 .youngjin { margin-left: -2.5%; }
-
-.y { background: linear-gradient(to bottom, rgb(45, 67, 100), rgb(167, 179, 197)); }
-
 .hide { display: none; }
 
 .graph_bottom { margin-top: 55px; }
@@ -240,26 +242,28 @@ a {
         font-size: 14px;
         font-weight: bold;
     }
-    
-    .logo {
-        margin-left: 230px;
-        width: 100%;
-        height: 60px;
-    }
-
     .text {
         text-align: center;
         font-size: 25px;
         margin-top: 10px;
+    }
+
+    .logo {
+        margin-left: 230px;
+        width: 100%;
+        height: 60px;
+    }.logo img { height: 60px; }
+
+    .information {
+        height: 70px;
+        font-size: 15px;
     }
     
     .now {
         text-align: center;
         margin-top: -15px;
     }
-    
-    #todayImg { width: 100px; }
-    
+    .todayImg { width: 100px; }
     .todayWeather {
         color: white;
         font-size: 18px;
@@ -382,9 +386,7 @@ a {
     }
 
     .now { margin-top: 20px; }
-
     #todayImg { width: 100px; }
-    
     .todayWeather {
         color: white;
         font-size: 15px;
@@ -395,7 +397,7 @@ a {
         width: 100%;
         height: 70px;
         background-color: rgb(231, 230, 230);
-    }
+    }.logo img { height: 70px; }
 
     /*chart1*/
     #container1 {
@@ -492,7 +494,9 @@ a {
         margin-left: 0px;
         position: fixed;
         z-index: 1000;
-    }
+    }.logo img { height: 60px; }
+
+    .information { display: none; }
 
     /*chart1*/
     #container1 {
