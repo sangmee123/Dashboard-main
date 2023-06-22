@@ -673,7 +673,7 @@ function onGeoOk(position){
               const weather = document.querySelector("#weatherToday1"); 
               const city = document.querySelector("#weatherToday2");
               city.innerText = data.name;
-              weather.innerText = `${data.weather[0].main} / ${data.main.temp}`;
+              weather.innerText = `${data.weather[0].main} / ${parseInt(data.main.temp)}º`;
               console.log(data);
     });
 }
