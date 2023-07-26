@@ -67,6 +67,14 @@ a {
     margin-left: 100px;
 }
 
+/* 햄버거 메뉴*/
+#icon { display: none; }
+#icon label { display: none; }
+#header { display: none; } 
+
+/* 기업 리스트 */
+.selectBox { display: none; }
+
 /* 날씨 */
 .now {
     text-align: center;
@@ -79,60 +87,18 @@ a {
 }
 
 /*chart1*/
-#container1 {
-    height: 450px;   
-    border-radius: 15px;
-    margin-top: 60px;   
-}
-
-.highcharts-figure1,
-.highcharts-data-table table {
-    display: inline-block;
-    min-width: 495px;
-    max-width: 300px; 
-    margin-left: 320px;  
-    margin-right: 50px;
+#chartdiv1 {
+    height: 450px;
+    width: 495px;
+    background-color: rgba(24, 38, 51, 0.4);
+    margin-left: 320px;
     float: left;
-}
-
-.highcharts-data-table table {
-    font-family: Verdana, sans-serif;
-    border-collapse: collapse;
-    border: 1px solid #ebebeb;
-    margin: 10px auto;
-    text-align: center;
-    width: 100%;
-    max-width: 500px;
-}
-
-.highcharts-data-table caption {
-    padding: 1em 0;
-    font-size: 1.2em;
-    color: #555;
-}
-
-.highcharts-data-table th {
-    font-weight: 600;
-    padding: 0.5em;
-}
-
-.highcharts-data-table td,
-.highcharts-data-table th,
-.highcharts-data-table caption {
-    padding: 0.5em;
-}
-
-.highcharts-data-table thead tr,
-.highcharts-data-table tr:nth-child(even) {
-    background: #f8f8f8;
-}
-
-.highcharts-data-table tr:hover {
-    background: #f1f7ff;
+    border-radius: 15px;
+    margin-top: 60px;
 }
 
 /*chart2*/
-#chartdiv {
+#chartdiv2 {
     margin-top: 60px;
     margin-left: 850px;
     width: 850px;
@@ -221,7 +187,7 @@ a {
 @media all and (min-width:1024px) and (max-width: 1980px) {
     /* 노트북 & PC CSS*/ 
 
-    .navibar { width: 230px; }
+    .navibar { width: 200px; }
 
     .date {
         font-size: 30px;
@@ -236,7 +202,7 @@ a {
     .icon {
         width: 40px;
         margin-top: 3%;
-        margin-left: 95px;
+        margin-left: 80px;
     }.icon_p { 
         text-align: center; 
         font-size: 14px;
@@ -249,7 +215,7 @@ a {
     }
 
     .logo {
-        margin-left: 230px;
+        margin-left: 200px;
         width: 100%;
         height: 60px;
     }.logo img { height: 60px; }
@@ -258,7 +224,7 @@ a {
         height: 70px;
         font-size: 15px;
     }
-    
+
     .now {
         text-align: center;
         margin-top: -15px;
@@ -271,38 +237,30 @@ a {
     }
 
     /*chart1*/
-    #container1 {
-        width: 295px;
-        height: 250px;   
-        margin-top: 8px;
-    }
-
-    .highcharts-figure1,
-    .highcharts-data-table table {
-        min-width: 300px;
-        max-width: 250px; 
-        margin-left: 240px;  
-        margin-right: 50px;
-        float: left;
+    #chartdiv1 {
+        width: 300px;
+        height: 260px;   
+        margin-top: 5px;
+        margin-left: 210px;
     }
 
     /*chart2*/
-    #chartdiv {
+    #chartdiv2 {
         width: 455px;
-        height: 250px;
-        margin-top: 8px;
-        margin-left: 540px;
+        height: 260px;
+        margin-top: 5px;
+        margin-left: 515px;
     }
 
     /*기업 리스트*/
     .contents {
-        margin-top: 8px;
-        margin-left: 1000px;
+        margin-top: 5px;
+        margin-left: 975px;
     }
 
     #menu {
-        width: 270px;
-        height: 250px;
+        width: 300px;
+        height: 260px;
     }
 
     #corporation_list {
@@ -325,24 +283,24 @@ a {
     
     /*chart3*/
     #chartdiv3 {
-        width: 295px;
-        height: 270px;
-        margin-left: 240px;
+        width: 300px;
+        height: 260px;
+        margin-left: 210px;
     }
 
     /*chart4*/
     #chartdiv4 {
         width: 455px;
-        height: 270px;
+        height: 260px;
         position: fixed;
-        margin-left: 540px;
+        margin-left: 515px;
     }
     
     /*chart5*/
     #chartdiv5 {    
-        width: 270px;
-        height: 270px;   
-        margin-left: 1000px;
+        width: 300px;
+        height: 260px;   
+        margin-left: 975px;
         background-color: rgba(24, 38, 51, 0.4);
         border-radius: 15px;
         position: fixed;
@@ -400,23 +358,15 @@ a {
     }.logo img { height: 70px; }
 
     /*chart1*/
-    #container1 {
+    #chartdiv1 {
         width: 270px;
         height: 300px;   
         margin-top: 40px;
-    }
-
-    .highcharts-figure1,
-    .highcharts-data-table table {
-        min-width: 300px;
-        max-width: 250px; 
-        margin-left: 190px;  
-        margin-right: 50px;
-        float: left;
+        margin-left: 190px;
     }
 
     /*chart2*/
-    #chartdiv {
+    #chartdiv2 {
         width: 430px;
         height: 300px;
         margin-top: 40px;
@@ -488,6 +438,7 @@ a {
 
     .navibar { display: none; }
 
+    /* Logo 네비바 */
     .logo {     
         overflow: hidden;
         height: 60px;
@@ -498,38 +449,145 @@ a {
 
     .information { display: none; }
 
-    /*chart1*/
-    #container1 {
-        width: 67.5%;
-        height: 250px;  
-        margin-top: 65px;
-        margin-left: 1%;
-        float: left;
+    /* 햄버거 메뉴 */
+    .information_m { 
+        color: black; 
+        margin-top: 15px;
+        margin-bottom: 4px;
+    }
+    input[id="icon"] { display:none; } 
+    input[id="icon"] + label{
+        position: relative;
+        display: block;
+        width: 27px;
+        height: 20px;
+        cursor: pointer;  /* 커서를 올려놓을 때 모양이 바뀐다. */
+        margin-top: 20px;
+        margin-right: 10px;
+        float: right;
+    } 
+    input[id="icon"] + label > span {
+        position: absolute;
+        display: block;
+        width: 100%;
+        height: 2px;
+        border-radius:30px;
+        background:rgb(43, 43, 43);
+        transition: all 0.35s;  /* 진행되는 과정들을 천천히 보여줄 수 있다. 0.35초 동안 진행됨 */
+        z-index:2;
+    }
+    input[id="icon"] + label > span:nth-child(1) { top:0px; }
+    input[id="icon"] + label > span:nth-child(2) {
+        top:50%;
+        transform: translateY(-50%);  /* 엘리먼트를 변형할 때 쓴다. 비틀거나 구부리거나 돌릴 때 . 여러가지로 모양을 바꿀 때 */
+    }
+    input[id="icon"] + label > span:nth-child(3) { bottom:0px; }
+    input[id="icon"]:checked + label > span:nth-child(1) {
+        top:50%;
+        transform:translateY(-50%) rotate(45deg);
+    }
+    input[id="icon"]:checked + label > span:nth-child(2) { opacity: 0; }
+    input[id="icon"]:checked + label > span:nth-child(3) {
+        bottom:50%;
+        transform:translateY(50%) rotate(-45deg);
+    }
+    
+    #icon + label + #header {
+        display: block;
+        position: fixed;  /* 스크롤을 내리더라도 같은 위치에서 붙어다닌다. */
+        width: 300px;
+        height: 100%;
+        background:rgb(231, 230, 230);
+        top: 0px;
+        padding: 60px 25px 25px 25px;
+        box-sizing: border-box;
+        right: -300px;
+        z-index: 1;
+        transition: all 0.35s;
+    }
+    #icon:checked + label + #header { right :0px; } 
+    #icon:checked + label + #header > ul > li > a { color: white; }
+
+
+    .graph_top { margin-top: 60px; }
+
+    /* 기업 리스트 */
+    .selectBox {
+        background: url('/images/arrow-down.png') calc(98% - 7px) center no-repeat;
+        background-size: 20px;
+        display: block;  
+        height: 45px;
+        text-align: center;
+        text-align-last: center;
+        margin-top: 3px;
+        margin-left: 0.3%;
+        margin-bottom: 3px;
+        overflow: hidden;
+    } .selectBox:after {
+        content: '';
+        display: block; 
+        width: 2px;
+        height: 45px; 
+        position: absolute; 
+        top: 63px; 
+        right: 50px;
     }
 
-    .highcharts-figure1,
-    .highcharts-data-table table {
-        min-width: 300px;
-        max-width: 400px; 
-        margin-left: 0px;  
-        margin-right: 50px;
+    select::-ms-expand { display: none; }
+    select {
+        -o-appearance: none;
+        -webkit-appearance: none;
+        -moz-appearance: none;
+        appearance: none;
+    }
+    
+    .select {
+        background: calc(100% - 5px) center no-repeat;
+        width: 98%;
+        height: 45px;
+        color: white;
+        font-size: 17px;
+        border: 4px solid rgba(237, 152, 7);;
+        border-radius: 4px;
+        padding: 5px 30px 5px 10px;
+        outline: 0 none;
+        opacity: 0.5;
+    }.select:hover { opacity: 1;}
+    .select optgroup {
+        background: black;
+        color: #fff;     
+        font-size: 17px;
+        text-align: center;
+        text-align-last: center;
+        padding: 3px 0;   
+    }
+
+    /*chart1*/
+    #chartdiv1 {
+        width: 98%;
+        height: 400px;
+        margin-top: 0px;
+        margin-left: 1%;
+        margin-bottom: 3px;           
     }
 
     /*chart2*/
-    #chartdiv {
-        width: 100%;
+    #chartdiv2 {
+        width: 98%;
         height: 400px;
         margin-top: 0px;
-        margin-left: 0px;
+        margin-left: 1%;    
+        margin-bottom: 3px;      
         position: relative;
         float: left;
     }
 
-     /*기업 리스트*/
-     .contents {
+    /*기업 리스트*/
+    .contents {
+        display: none;
+        
         width: 44%;
-        height: 400px;
-        margin-top: 65px;
+        margin-top: 0px;
         margin-left: 55.3%;
         position: fixed;
         z-index: 1000;
@@ -565,18 +623,29 @@ a {
     
     /*chart3*/
     #chartdiv3 {
-        width: 100%;
-        height: 350px;
-        margin-left: 0px;
+        width: 98%;
+        height: 400px;
+        margin-left: 1%;  
+        margin-bottom: 3px;    
         float: left;
     }
 
     /*chart4*/
     #chartdiv4 {
-        width: 100%;
+        width: 98%;
         height: 400px;
         position: relative;
-        margin-top: 320.34px;
-        margin-left: 0px;
+        margin-left: 1%;    
+        margin-bottom: 3px;
+    }
+
+    /*chart5*/
+    #chartdiv5 {   
+        width: 98%;
+        height: 400px;
+        position: relative;
+        margin-left: 1%;  
+        margin-bottom: 30px;    
+        float: left;  
     }
 } 

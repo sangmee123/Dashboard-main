@@ -1,11 +1,8 @@
-* { 
-    margin: 0; padding: 0; 
-    overflow-x: hidden;
-    overflow-y: hidden;
-}
+* { margin: 0; padding: 0; }
 body { 
     background: rgba(239, 239, 239);     
-    overflow-y: hidden;
+    overflow-x: hidden;
+    overflow-y: scroll;
 }
 
 .navibar {
@@ -73,6 +70,11 @@ a {
     overflow-y: hidden;
 }
 
+/* 햄버거 메뉴*/
+#icon { display: none; }
+#icon label { display: none; }
+#header { display: none; } 
+
 /* 날씨 */
 .now {
     text-align: center;
@@ -110,6 +112,14 @@ a {
     margin-bottom: 30px;
     overflow-y: hidden;
 }
+
+#address {
+    text-align: center;
+    margin-bottom: 50px;
+} span:nth-child(1) {
+    color:#0c82e9;
+    font-weight: bold;
+} span:nth-child(2) { color: #555; }
 
 #patent {
     display: block;
@@ -165,9 +175,9 @@ tbody th { background-color: #eef1f3;}
 }
 @media all and (min-width:1024px) and (max-width: 1980px) {
     /* 노트북 & PC CSS */ 
-    * { overflow-y: scroll; } 
+    body { overflow-y: scroll;}
     .navibar {
-        width: 230px;
+        width: 200px;
         height: 100%;
     }
 
@@ -185,7 +195,7 @@ tbody th { background-color: #eef1f3;}
     .icon {
         width: 40px;
         margin-top: 3%;
-        margin-left: 95px;
+        margin-left: 80px;
     }.icon_p { 
         text-align: center; 
         font-size: 14px;
@@ -203,7 +213,7 @@ tbody th { background-color: #eef1f3;}
         height: 60px;    
     }.logo img {
         height: 60px; 
-        margin-left: 230px; 
+        margin-left: 200px; 
     }
     
     .information {
@@ -223,20 +233,20 @@ tbody th { background-color: #eef1f3;}
         font-weight: bold;
     }
 
-    li img { width: 25px; }
+    .container { margin-left: 200px; }
 
     #map {
-        width: 40%;
-        height:330px;
+        width: 50%;
+        height: 330px;
     }
-   
+
     #patent {
-        width: 55%;
+        width: 50%;
         margin: 0 auto;
         margin-bottom: 20px;
     }
 
-    #webTable { width: 55%; }
+    #webTable, #file { width: 90%; }
     #webTable th { 
         width: 40px; 
         padding: 15px 5px;
@@ -245,16 +255,12 @@ tbody th { background-color: #eef1f3;}
     .tdWidth { width: 40%; }
 
     #mobTable { display: none; }
-
-    #file { 
-        width: 55%;
-    }
 } 
 
 @media screen and (min-width:768px) and (max-width: 1200px) {
 
 	/* 테블릿 CSS */ 
-    * { overflow-y: scroll; } 
+    body { overflow-y: scroll; }
     .navibar {
         width: 180px;
         height: 100%;
@@ -326,9 +332,7 @@ tbody th { background-color: #eef1f3;}
     #patent { width: 53%; }
 
     #webTable { width: 53%; }
-    #webTable th { 
-        padding: 5px 5px;
-    }
+    #webTable th { padding: 5px 5px; }
     #webTable td { padding: 5px 10px; }
     .tdWidth { width: 40%; }
 
@@ -337,18 +341,81 @@ tbody th { background-color: #eef1f3;}
 
 @media screen and (max-width:640px) {
     /* 모바일 CSS */
-    * { overflow-y: scroll; }   
+    body { overflow-y: scroll; }
+
     .navibar { display: none; }
 
     .logo {
         height: 60px;
+        top: 0;
         margin-left: 0px;
         position: fixed; 
-        z-index: 1;
+        z-index: 3;
         overflow-y: hidden; 
     }.logo img { height: 60px; }
 
     .information { display: none; }
+
+    /* 햄버거 메뉴 */
+    #header li { list-style: none; }
+    .information_m { 
+        color: black; 
+        margin-top: 15px;
+        margin-bottom: 4px;
+    }
+    input[id="icon"] { display:none; } 
+    input[id="icon"] + label{
+        position: relative;
+        display: block;
+        width: 27px;
+        height: 20px;
+        cursor: pointer;  /* 커서를 올려놓을 때 모양이 바뀐다. */
+        margin-top: 20px;
+        margin-right: 10px;
+        float: right;
+    } 
+    input[id="icon"] + label > span {
+        position: absolute;
+        display: block;
+        width: 100%;
+        height: 2px;
+        border-radius:30px;
+        background:rgb(43, 43, 43);
+        transition: all 0.35s;  /* 진행되는 과정들을 천천히 보여줄 수 있다. 0.35초 동안 진행됨 */
+        z-index:2;
+    }
+    input[id="icon"] + label > span:nth-child(1) { top:0px; }
+    input[id="icon"] + label > span:nth-child(2) {
+        top:50%;
+        transform: translateY(-50%);  /* 엘리먼트를 변형할 때 쓴다. 비틀거나 구부리거나 돌릴 때 . 여러가지로 모양을 바꿀 때 */
+    }
+    input[id="icon"] + label > span:nth-child(3) { bottom:0px; }
+    input[id="icon"]:checked + label > span:nth-child(1) {
+        top:50%;
+        transform:translateY(-50%) rotate(45deg);
+    }
+    input[id="icon"]:checked + label > span:nth-child(2) { opacity: 0; }
+    input[id="icon"]:checked + label > span:nth-child(3) {
+        bottom:50%;
+        transform:translateY(50%) rotate(-45deg);
+    }
+    
+    #icon + label + #header {
+        display: block;
+        position: fixed;  /* 스크롤을 내리더라도 같은 위치에서 붙어다닌다. */
+        width: 300px;
+        height: 100%;
+        background:rgb(231, 230, 230);
+        top: 0px;
+        padding: 60px 25px 25px 25px;
+        box-sizing: border-box;
+        right: -300px;
+        z-index: 1;
+        transition: all 0.35s;
+    }
+    #icon:checked + label + #header { right :0px; } 
+    #icon:checked + label + #header > ul > li > a { color: white; }
+
 
     .container { margin-top: 40px; }
     .container h3 {
@@ -382,6 +449,7 @@ tbody th { background-color: #eef1f3;}
         margin-bottom: 50px;
         overflow-y: hidden;
     }#mobTable th { 
+        background-color: rgba(237, 152, 7, 0.6);
         font-size: 12px; 
         padding: 5px 10px;
         overflow-y: hidden;
@@ -398,7 +466,7 @@ tbody th { background-color: #eef1f3;}
         padding: 15px;
     }#file th { 
         width: 10%;    
-        background: rgba(239, 239, 239); 
+        background: rgb(230, 230, 230); 
         padding: 20px;
     }
 } 

@@ -69,6 +69,11 @@ a {
     margin-left: 100px;
 }
 
+/* 햄버거 메뉴*/
+#icon { display: none; }
+#icon label { display: none; }
+#header { display: none; } 
+
 /* 날씨 */
 .now {
     text-align: center;
@@ -94,7 +99,7 @@ a {
     }
 
     .navibar {
-        width: 230px;
+        width: 200px;
         height: 100%;
     }
 
@@ -112,7 +117,7 @@ a {
     .icon {
         width: 40px;
         margin-top: 3%;
-        margin-left: 95px;
+        margin-left: 80px;
     }.icon_p { 
         text-align: center; 
         font-size: 14px;
@@ -130,7 +135,7 @@ a {
         height: 60px;
     }.logo img { 
         height: 60px;
-        margin-left: 230px; 
+        margin-left: 200px; 
     }
     
     .information {
@@ -229,6 +234,7 @@ a {
 
     .navibar { display: none; }
 
+    /* logo 네비바 */
     .logo {
         height: 60px;
         margin-left: 0px;
@@ -236,6 +242,65 @@ a {
     }.logo img { height: 60px; }
 
     .information { display: none; }
+
+    /* 햄버거 메뉴 */
+    .information_m { 
+        color: black; 
+        margin-top: 15px;
+        margin-bottom: 4px;
+    }
+    input[id="icon"] { display:none; } 
+    input[id="icon"] + label{
+        position: relative;
+        display: block;
+        width: 27px;
+        height: 20px;
+        cursor: pointer;  /* 커서를 올려놓을 때 모양이 바뀐다. */
+        margin-top: 20px;
+        margin-right: 10px;
+        float: right;
+    } 
+    input[id="icon"] + label > span {
+        position: absolute;
+        display: block;
+        width: 100%;
+        height: 2px;
+        border-radius:30px;
+        background:rgb(43, 43, 43);
+        transition: all 0.35s;  /* 진행되는 과정들을 천천히 보여줄 수 있다. 0.35초 동안 진행됨 */
+        z-index:2;
+    }
+    input[id="icon"] + label > span:nth-child(1) { top:0px; }
+    input[id="icon"] + label > span:nth-child(2) {
+        top:50%;
+        transform: translateY(-50%);  /* 엘리먼트를 변형할 때 쓴다. 비틀거나 구부리거나 돌릴 때 . 여러가지로 모양을 바꿀 때 */
+    }
+    input[id="icon"] + label > span:nth-child(3) { bottom:0px; }
+    input[id="icon"]:checked + label > span:nth-child(1) {
+        top:50%;
+        transform:translateY(-50%) rotate(45deg);
+    }
+    input[id="icon"]:checked + label > span:nth-child(2) { opacity: 0; }
+    input[id="icon"]:checked + label > span:nth-child(3) {
+        bottom:50%;
+        transform:translateY(50%) rotate(-45deg);
+    }
+    
+    #icon + label + #header {
+        display: block;
+        position: fixed;  /* 스크롤을 내리더라도 같은 위치에서 붙어다닌다. */
+        width: 300px;
+        height: 100%;
+        background:rgb(231, 230, 230);
+        top: 0px;
+        padding: 60px 25px 25px 25px;
+        box-sizing: border-box;
+        right: -300px;
+        z-index: 1;
+        transition: all 0.35s;
+    }
+    #icon:checked + label + #header { right :0px; } 
+    #icon:checked + label + #header > ul > li > a { color: white; }
 
     #smartM {
         visibility: visible;

@@ -55,17 +55,21 @@ navigator.geolocation.getCurrentPosition(onGeoOk,onGeoError);
 
 /* 원본 이미지 */
 document.querySelector('#fir').addEventListener('click', function() {
-    window.open('../images/천공기.jpg');
+    if (window.outerWidth > 500) //모바일 화면 사이즈가 아닐 경우
+        window.open('../images/천공기.jpg');
 });
 
 document.querySelector('#sec').addEventListener('click', function() {
-    window.open('../images/앱.jpg');
+    if(window.outerWidth > 500) 
+        window.open('../images/앱.jpg');
 });
 
 document.querySelector('#tel1').addEventListener('click', function() {
-    window.open('../images/텔레메틱스1.png');
+    if(window.outerWidth > 500)
+        window.open('../images/텔레메틱스1.png');
 })
 
 document.querySelector('#tel2').addEventListener('click', function() {
-    window.open('../images/텔레메틱스2.png');
+    if(window.outerWidth > 500)
+        window.open('../images/텔레메틱스2.png');
 })
