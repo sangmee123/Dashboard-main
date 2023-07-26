@@ -26,27 +26,16 @@ updateGraph4();
 updateGraph5();
 
 /* 기업 리스트에서 하나를 택할 시 해당 호기 전체 그래프 데이터 출력 */
-for(let i = 0; i < 3; i++) {
-    window.onload = function(){
-        /* 웹 PC 기업 리스트 */
-        document.querySelector('.li' + i).addEventListener('click', function() {       
-          updateGraph1();
-          updateGraph2();
-          updateGraph3();
-          updateGraph4();
-          updateGraph5();
-        });
-        /* 모바일 버전 기업 리스트 */
-        document.querySelector('.opt' + i).addEventListener('click', function() {
-            updateGraph1();
-            updateGraph2();
-            updateGraph3();
-            updateGraph4();
-            updateGraph5();
-        });
-    }
+window.onload = function(){
+    /* 웹 PC 기업 리스트 */
+    document.querySelector('.li_c').addEventListener('click', function() {       
+      updateGraph1(); updateGraph2(); updateGraph3(); updateGraph4(); updateGraph5();
+    });
+    /* 모바일 버전 기업 리스트 */
+    document.querySelector('option').addEventListener('click', function() {
+        updateGraph1(); updateGraph2(); updateGraph3(); updateGraph4(); updateGraph5();
+    });
 }
-
 
 /*chart1*/
 function updateGraph1() { 
