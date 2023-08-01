@@ -2,6 +2,7 @@
 https://solimatics.co.kr/
 <h3>반응형 웹 Dashboard</h3>
 <img src="images/readme_home.jpg">
+
 > 대학교 내의 입주 IT기업에서 근로한 작업
 >
 >**프로젝트**: 천공기 Smart Dashboard 
