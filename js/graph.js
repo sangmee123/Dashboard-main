@@ -210,7 +210,7 @@ function updateGraph2() {
   var yAxis = chart.yAxes.push(am5xy.ValueAxis.new(root, {
       logarithmic: true,
       renderer: am5xy.AxisRendererY.new(root, {
-        minGridDistance: 10
+        minGridDistance: 50
       })
   }));
   
@@ -442,7 +442,7 @@ function updateGraph4() {
   var yAxis = chart.yAxes.push(am5xy.ValueAxis.new(root, {
       logarithmic: true,
       renderer: am5xy.AxisRendererY.new(root, {
-        minGridDistance: 20
+        minGridDistance: 50
       })
   }));
   

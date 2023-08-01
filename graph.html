@@ -216,13 +216,13 @@
                             value: Math.abs(data[i].pressure) }) 
                         arr2_1.push({ 
                             year: data[i].collecttime, 
-                            value: Math.abs(data[i].max_depth + 100) / 1000 });
+                            value: Math.abs(data[i].max_depth + 1) / 1000 });
                         arr3_1.push({ 
                             year: data[i].collecttime,
                             value: Math.abs(data[i].torque) });
                         arr4_1.push({
                             year: data[i].collecttime,
-                            value: Math.abs(data[i].beat_position + 100) / 1000 });
+                            value: Math.abs(data[i].beat_position + 1) / 1000 });
                         let inX = data[i].inclination_x;
                         let inY = data[i].inclination_y;
                         if(inX > 18000) inX = 36000 - data[i].inclination_x;
@@ -260,13 +260,13 @@
                         value: Math.abs(data.pressure) });    
                     arr2_2.push({ 
                         year: data.collecttime, 
-                        value: Math.abs(data.max_depth + 100) / 1000 });
+                        value: Math.abs(data.max_depth + 1) / 1000 });
                     arr3_2.push({ 
                         year: data.collecttime,
                         value: Math.abs(data.torque) });
                     arr4_2.push({
                         year: data.collecttime,
-                        value: Math.abs(data.beat_position + 100) / 1000 });
+                        value: Math.abs(data.beat_position + 1) / 1000 });
 
                     let inX = data.inclination_x;
                     let inY = data.inclination_y;

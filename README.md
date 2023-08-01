@@ -1,5 +1,11 @@
 # 반응형 웹 Dashboard
-https://solimatics.co.kr/
+<h2>목차</h2>
+
+- 개요
+
+- 
+  
+
 <h2>포트폴리오 개요</h2>
 <img src="images/readme_home.jpg">
 
@@ -11,7 +17,7 @@ https://solimatics.co.kr/
 >
 >**웹 배포 시작일**: 2022.12.01
 >
->**기능 상세**: 오늘 작업을 시작한 시점에서부터 실시간으로 들어오는 데이터 값을 읽어 Line Graph로 보여줍니다.
+>**주 기능**: 오늘 작업을 시작한 시점에서부터 실시간으로 들어오는 데이터 값을 읽어 Line Graph로 보여줍니다.
 
 https://solimatics.co.kr
 
