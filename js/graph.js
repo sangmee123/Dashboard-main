@@ -209,7 +209,9 @@ function updateGraph2() {
   
   var yAxis = chart.yAxes.push(am5xy.ValueAxis.new(root, {
       logarithmic: true,
-      renderer: am5xy.AxisRendererY.new(root, {})
+      renderer: am5xy.AxisRendererY.new(root, {
+        minGridDistance: 10
+      })
   }));
   
   // Add scrollbar
@@ -439,7 +441,9 @@ function updateGraph4() {
   
   var yAxis = chart.yAxes.push(am5xy.ValueAxis.new(root, {
       logarithmic: true,
-      renderer: am5xy.AxisRendererY.new(root, {})
+      renderer: am5xy.AxisRendererY.new(root, {
+        minGridDistance: 20
+      })
   }));
   
   // Add scrollbar
