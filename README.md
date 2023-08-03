@@ -1,13 +1,18 @@
 # 반응형 웹 Dashboard
 ## 📗목차 
 
-- 📝[개요](#-포트폴리오-개요)
+- 📝 [개요](#-포트폴리오-개요)
 
-- 🔗[링크](#-링크)
-  
+- 🔗 [링크](#-링크)
+
+- 💡 [프로젝트 기획](#-프로젝트-기획)
+
+- 🔨 [사용 기술 스택](#-사용-기술-스택)
 
 ## 📝 포트폴리오 개요
 <img src="images/readme_home.jpg">
+
+대학교 내의 입주 IT기업에서 근로한 작업
 
 >**프로젝트명**: 천공기 Smart Dashboard 
 >
@@ -20,8 +25,9 @@
 ## 🔗 링크
 https://solimatics.co.kr
 
-대학교 내의 입주 IT기업에서 근로한 작업
+## 💡 프로젝트 기획
 
+## 🔨 사용 기술 스택
 <img src="images/readme1.jpg">
 <img src="images/readme2.jpg">
 <img src="images/readme3.jpg">
