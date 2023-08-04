@@ -223,6 +223,7 @@
                         arr4_1.push({
                             year: data[i].collecttime,
                             value: Math.abs(data[i].beat_position) / 1000 + 0.1});
+
                         let inX = data[i].inclination_x;
                         let inY = data[i].inclination_y;
                         if(inX > 18000) inX = 36000 - data[i].inclination_x;
@@ -261,6 +262,7 @@
                     arr2_2.push({ 
                         year: data.collecttime, 
                         value: Math.abs(data.max_depth) / 1000 + 0.1});
+
                     arr3_2.push({ 
                         year: data.collecttime,
                         value: Math.abs(data.torque) });
