@@ -27,7 +27,8 @@ https://solimatics.co.kr
 
 ## 💡 프로젝트 기획 의도
 건축 장비 관련 SW 회사에서 교외 근로를 하면서 맡은 프로젝트입니다.<br>
-천공기가 작동하면서 측정되는 실시간 데이터 값들을 그래프로 나타내어 Pressue, Torque, Max Depth 등의 추세선을 시각적으로 확인해볼 수 있습니다.
+천공기가 작동하면서 측정되는 실시간 데이터 값들을 그래프로 나타냅니다.<br>
+각 Pressue, Torque, Max Depth 등의 그래프를 통해 **추세선**을 시각적으로 확인해볼 수 있습니다.
 
 ## 🛠 사용 기술 스택
 ![HTML5](https://img.shields.io/badge/html5-%23E34F26.svg?style=for-the-badge&logo=html5&logoColor=white)
