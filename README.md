@@ -40,7 +40,9 @@ https://solimatics.co.kr
 ![PHP](https://img.shields.io/badge/php-%23777BB4.svg?style=for-the-badge&logo=php&logoColor=white)
 ![MariaDB](https://img.shields.io/badge/MariaDB-003545?style=for-the-badge&logo=mariadb&logoColor=white)
 
-## PC 버전
-<img src="images/readme1.jpg">
-<img src="images/readme2.jpg">
-<img src="images/readme3.jpg">
+## PC 버전(Desktop)
+<img src="images/readme1.jpg"><img src="images/readme2.jpg"><img src="images/readme3.jpg">
+
+https://github.com/sangmee123/Dashboard-main/assets/69633033/1cbaf29e-8988-4368-a481-5b93788a9532
+
+
