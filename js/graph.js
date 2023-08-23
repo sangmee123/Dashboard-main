@@ -15,10 +15,10 @@ function getTime() {
     const timeString = h + ':' + m;
     clock.innerHTML = `${h<10 ? `0${h}`:h}:${m<10 ? `0${m}`:m}`
 }
-
-/* Graph 1 ~ 5 함수 호출 */
 function init_Clock() { setInterval(getTime, 1000); }
 init_Clock();
+
+/* Graph 1 ~ 5 함수 호출 */
 updateGraph1();
 updateGraph2();
 updateGraph3();
@@ -28,18 +28,27 @@ updateGraph5();
 /* 기업 리스트에서 하나를 택할 시 해당 호기 전체 그래프 데이터 출력 */
 window.onload = function(){
     /* 웹 PC 기업 리스트 */
-    document.querySelector('.li_c').addEventListener('click', function() {       
-      updateGraph1(); updateGraph2(); updateGraph3(); updateGraph4(); updateGraph5();
+    document.querySelector('.c').addEventListener('click', () => {       
+      updateGraph1(); 
+      updateGraph2(); 
+      updateGraph3(); 
+      updateGraph4(); 
+      updateGraph5();
     });
     /* 모바일 버전 기업 리스트 */
-    document.querySelector('option').addEventListener('click', function() {
-        updateGraph1(); updateGraph2(); updateGraph3(); updateGraph4(); updateGraph5();
+    document.querySelector('option').addEventListener('click', () => {
+      updateGraph1(); 
+      updateGraph2(); 
+      updateGraph3(); 
+      updateGraph4(); 
+      updateGraph5();
     });
 }
 
+
 /*chart1*/
 function updateGraph1() { 
-    var root = am5.Root.new("chartdiv1");
+    let root = am5.Root.new("chartdiv1");
 
     root.dateFormatter.setAll({
       dateFormat: "yyyy-MM-dd", //yyyy-MM-dd
@@ -54,7 +63,7 @@ function updateGraph1() {
     
     // Create chart
     // https://www.amcharts.com/docs/v5/charts/xy-chart/
-    var chart = root.container.children.push(am5xy.XYChart.new(root, {
+    let chart = root.container.children.push(am5xy.XYChart.new(root, {
       panX: true,
       panY: true,
       wheelX: "panX",
@@ -76,14 +85,14 @@ function updateGraph1() {
 
     // Add cursor
     // https://www.amcharts.com/docs/v5/charts/xy-chart/cursor/
-    var cursor = chart.set("cursor", am5xy.XYCursor.new(root, {
+    let cursor = chart.set("cursor", am5xy.XYCursor.new(root, {
       behavior: "none"
     }));
     cursor.lineY.set("visible", false);
 
     // // Create axes
     // // https://www.amcharts.com/docs/v5/charts/xy-chart/axes/
-    var xAxis = chart.xAxes.push(am5xy.DateAxis.new(root, {
+    let xAxis = chart.xAxes.push(am5xy.DateAxis.new(root, {
         baseInterval: { 
             timeUnit: "second", 
             count: 1 
@@ -92,7 +101,7 @@ function updateGraph1() {
         tooltip: am5.Tooltip.new(root, {})
     }));
     
-    var yAxis = chart.yAxes.push(am5xy.ValueAxis.new(root, {
+    let yAxis = chart.yAxes.push(am5xy.ValueAxis.new(root, {
         logarithmic: true,
         renderer: am5xy.AxisRendererY.new(root, {})
     }));
@@ -105,7 +114,7 @@ function updateGraph1() {
 
     // Add series
     // https://www.amcharts.com/docs/v5/charts/xy-chart/series/
-    var series = chart.series.push(am5xy.LineSeries.new(root, {
+    let series = chart.series.push(am5xy.LineSeries.new(root, {
         minBulletDistance: 10,
         name: "Pressure",
         xAxis: xAxis,
@@ -139,9 +148,7 @@ function updateGraph1() {
     });
 
     // Update data every second
-    setInterval(function () {
-        addData();
-    }, 5000);
+    setInterval(() => { addData(); }, 5000);
 
     function addData() {
         // Data
@@ -154,7 +161,7 @@ function updateGraph1() {
 
 /*chart2*/
 function updateGraph2() { 
-  var root = am5.Root.new("chartdiv2");
+  let root = am5.Root.new("chartdiv2");
 
   root.dateFormatter.setAll({
     dateFormat: "yyyy-MM-dd", //yyyy-MM-dd
@@ -169,7 +176,7 @@ function updateGraph2() {
   
   // Create chart
   // https://www.amcharts.com/docs/v5/charts/xy-chart/
-  var chart = root.container.children.push(am5xy.XYChart.new(root, {
+  let chart = root.container.children.push(am5xy.XYChart.new(root, {
     panX: true,
     panY: true,
     wheelX: "panX",
@@ -191,14 +198,14 @@ function updateGraph2() {
 
   // Add cursor
   // https://www.amcharts.com/docs/v5/charts/xy-chart/cursor/
-  var cursor = chart.set("cursor", am5xy.XYCursor.new(root, {
+  let cursor = chart.set("cursor", am5xy.XYCursor.new(root, {
     behavior: "none"
   }));
   cursor.lineY.set("visible", false);
 
   // // Create axes
   // // https://www.amcharts.com/docs/v5/charts/xy-chart/axes/
-  var xAxis = chart.xAxes.push(am5xy.DateAxis.new(root, {
+  let xAxis = chart.xAxes.push(am5xy.DateAxis.new(root, {
       baseInterval: { 
           timeUnit: "second", 
           count: 1 
@@ -207,11 +214,9 @@ function updateGraph2() {
       tooltip: am5.Tooltip.new(root, {})
   }));
   
-  var yAxis = chart.yAxes.push(am5xy.ValueAxis.new(root, {
+  let yAxis = chart.yAxes.push(am5xy.ValueAxis.new(root, {
       logarithmic: true,
-      renderer: am5xy.AxisRendererY.new(root, {
-        minGridDistance: 50
-      })
+      renderer: am5xy.AxisRendererY.new(root, {})
   }));
   
   // Add scrollbar
@@ -222,8 +227,8 @@ function updateGraph2() {
 
   // Add series
   // https://www.amcharts.com/docs/v5/charts/xy-chart/series/
-  var series = chart.series.push(am5xy.LineSeries.new(root, {
-      minBulletDistance: 10,
+  let series = chart.series.push(am5xy.LineSeries.new(root, {
+      minBulletDistance: 25,
       name: "Max Depth",
       xAxis: xAxis,
       yAxis: yAxis,
@@ -256,9 +261,7 @@ function updateGraph2() {
   });
 
   // Update data every second
-  setInterval(function () {
-      addData();
-  }, 5000);
+  setInterval(() => { addData(); }, 5000);
 
   function addData() {
       // Data
@@ -271,7 +274,7 @@ function updateGraph2() {
 
 /*chart3*/
 function updateGraph3() {
-    var root = am5.Root.new("chartdiv3");
+    let root = am5.Root.new("chartdiv3");
 
     root.dateFormatter.setAll({
       dateFormat: "yyyy-MM-dd", //yyyy-MM-dd
@@ -286,7 +289,7 @@ function updateGraph3() {
     
     // Create chart
     // https://www.amcharts.com/docs/v5/charts/xy-chart/
-    var chart = root.container.children.push(am5xy.XYChart.new(root, {
+    let chart = root.container.children.push(am5xy.XYChart.new(root, {
       panX: true,
       panY: true,
       wheelX: "panX",
@@ -308,14 +311,14 @@ function updateGraph3() {
 
     // Add cursor
     // https://www.amcharts.com/docs/v5/charts/xy-chart/cursor/
-    var cursor = chart.set("cursor", am5xy.XYCursor.new(root, {
+    let cursor = chart.set("cursor", am5xy.XYCursor.new(root, {
       behavior: "none"
     }));
     cursor.lineY.set("visible", false);
 
     // // Create axes
     // // https://www.amcharts.com/docs/v5/charts/xy-chart/axes/
-    var xAxis = chart.xAxes.push(am5xy.DateAxis.new(root, {
+    let xAxis = chart.xAxes.push(am5xy.DateAxis.new(root, {
         baseInterval: { 
             timeUnit: "second", 
             count: 1 
@@ -324,7 +327,7 @@ function updateGraph3() {
         tooltip: am5.Tooltip.new(root, {})
     }));
     
-    var yAxis = chart.yAxes.push(am5xy.ValueAxis.new(root, {
+    let yAxis = chart.yAxes.push(am5xy.ValueAxis.new(root, {
         logarithmic: true,
         renderer: am5xy.AxisRendererY.new(root, {})
     }));
@@ -337,7 +340,7 @@ function updateGraph3() {
 
     // Add series
     // https://www.amcharts.com/docs/v5/charts/xy-chart/series/
-    var series = chart.series.push(am5xy.LineSeries.new(root, {
+    let series = chart.series.push(am5xy.LineSeries.new(root, {
         minBulletDistance: 10,
         name: "Torque",
         xAxis: xAxis,
@@ -371,9 +374,7 @@ function updateGraph3() {
     });
 
     // Update data every second
-    setInterval(function () {
-        addData();
-    }, 5000);
+    setInterval(() => { addData(); }, 5000);
 
     function addData() {
         // Data
@@ -386,7 +387,7 @@ function updateGraph3() {
 
 /*chart4*/
 function updateGraph4() {
-  var root = am5.Root.new("chartdiv4");
+  let root = am5.Root.new("chartdiv4");
 
   root.dateFormatter.setAll({
     dateFormat: "yyyy-MM-dd", //yyyy-MM-dd
@@ -401,7 +402,7 @@ function updateGraph4() {
   
   // Create chart
   // https://www.amcharts.com/docs/v5/charts/xy-chart/
-  var chart = root.container.children.push(am5xy.XYChart.new(root, {
+  let chart = root.container.children.push(am5xy.XYChart.new(root, {
     panX: true,
     panY: true,
     wheelX: "panX",
@@ -423,14 +424,14 @@ function updateGraph4() {
 
   // Add cursor
   // https://www.amcharts.com/docs/v5/charts/xy-chart/cursor/
-  var cursor = chart.set("cursor", am5xy.XYCursor.new(root, {
+  let cursor = chart.set("cursor", am5xy.XYCursor.new(root, {
     behavior: "none"
   }));
   cursor.lineY.set("visible", false);
 
   // // Create axes
   // // https://www.amcharts.com/docs/v5/charts/xy-chart/axes/
-  var xAxis = chart.xAxes.push(am5xy.DateAxis.new(root, {
+  let xAxis = chart.xAxes.push(am5xy.DateAxis.new(root, {
       baseInterval: { 
           timeUnit: "second", 
           count: 1 
@@ -439,11 +440,9 @@ function updateGraph4() {
       tooltip: am5.Tooltip.new(root, {})
   }));
   
-  var yAxis = chart.yAxes.push(am5xy.ValueAxis.new(root, {
+  let yAxis = chart.yAxes.push(am5xy.ValueAxis.new(root, {
       logarithmic: true,
-      renderer: am5xy.AxisRendererY.new(root, {
-        minGridDistance: 50
-      })
+      renderer: am5xy.AxisRendererY.new(root, {})
   }));
   
   // Add scrollbar
@@ -454,8 +453,8 @@ function updateGraph4() {
 
   // Add series
   // https://www.amcharts.com/docs/v5/charts/xy-chart/series/
-  var series = chart.series.push(am5xy.LineSeries.new(root, {
-      minBulletDistance: 10,
+  let series = chart.series.push(am5xy.LineSeries.new(root, {
+      minBulletDistance: 25,
       name: "Beat Position",
       xAxis: xAxis,
       yAxis: yAxis,
@@ -488,9 +487,7 @@ function updateGraph4() {
   });
 
   // Update data every second
-  setInterval(function () {
-      addData();
-  }, 5000);
+  setInterval(() => { addData(); }, 5000)
 
   function addData() {
       // Data
@@ -503,7 +500,7 @@ function updateGraph4() {
 
 /*chart5*/
 function updateGraph5() {
-    var root = am5.Root.new("chartdiv5");
+    let root = am5.Root.new("chartdiv5");
 
     // Set themes
     // https://www.amcharts.com/docs/v5/concepts/themes/
@@ -513,7 +510,7 @@ function updateGraph5() {
     
     // Create chart
     // https://www.amcharts.com/docs/v5/charts/xy-chart/
-    var chart = root.container.children.push(am5xy.XYChart.new(root, {
+    let chart = root.container.children.push(am5xy.XYChart.new(root, {
       panX: true,
       panY: true,
       wheelX: "panX",
@@ -538,12 +535,12 @@ function updateGraph5() {
     
     // Add cursor
     // https://www.amcharts.com/docs/v5/charts/xy-chart/cursor/
-    var cursor = chart.set("cursor", am5xy.XYCursor.new(root, {}));
+    let cursor = chart.set("cursor", am5xy.XYCursor.new(root, {}));
     cursor.lineY.set("visible", false);
     
     // Create axes
     // https://www.amcharts.com/docs/v5/charts/xy-chart/axes/
-    var xAxis = chart.xAxes.push(am5xy.DateAxis.new(root, {
+    let xAxis = chart.xAxes.push(am5xy.DateAxis.new(root, {
       maxDeviation: 0.3,
       baseInterval: {
         timeUnit: "second",
@@ -553,7 +550,7 @@ function updateGraph5() {
       tooltip: am5.Tooltip.new(root, {})
     }));
     
-    var yAxis = chart.yAxes.push(am5xy.ValueAxis.new(root, {
+    let yAxis = chart.yAxes.push(am5xy.ValueAxis.new(root, {
       maxDeviation: 0.3,
       renderer: am5xy.AxisRendererY.new(root, {})
     }));
@@ -566,7 +563,7 @@ function updateGraph5() {
 
     // Add series
     // https://www.amcharts.com/docs/v5/charts/xy-chart/series/
-    var series = chart.series.push(am5xy.LineSeries.new(root, {
+    let series = chart.series.push(am5xy.LineSeries.new(root, {
       name: "X",
       xAxis: xAxis,
       yAxis: yAxis,
@@ -593,7 +590,7 @@ function updateGraph5() {
     
     series.get("tooltip").get("background").set("fillOpacity", 0.5);
 
-    var series2 = chart.series.push(am5xy.LineSeries.new(root, {
+    let series2 = chart.series.push(am5xy.LineSeries.new(root, {
       minBulletDistance: 10,
       name: "Y",
       xAxis: xAxis,
@@ -640,9 +637,7 @@ function updateGraph5() {
     });
 
     // Update data every second
-    setInterval(function () {
-        addData();
-    }, 5000);
+    setInterval(() => { addData(); }, 5000)
 
     function addData() {
         // Data
