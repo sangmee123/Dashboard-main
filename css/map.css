@@ -96,7 +96,7 @@ a:hover {
     margin-top: 70px;
 }
 .header {   
-    width: 300px;
+    width: 330px;
     background-color: rgb(247, 246, 246);  ;
     color: rgba(0, 0, 0, 0.7);
     font-size: 20px;
@@ -104,18 +104,18 @@ a:hover {
     border-bottom: 1px solid rgb(226, 226, 226);
     padding: 20px;
     position: fixed;
-}.header p { margin-left: 25%;}
+}.header p { margin-left: 30%; }
 
 .list { 
     overflow-y: auto;
     color: rgba(0, 0, 0, 0.85);
     list-style: none;
-    padding: 10px 70px 10px 70px;
+    padding: 10px 50px 10px 50px;
     margin-top: 70px;
 }.list li {
     background-color: white;
     text-align: center;
-    padding: 20px 30px 20px 30px;
+    padding: 20px 35px 20px 35px;
     border: 1px solid rgb(198, 198, 198);
     border-radius: 5px;
     margin-top: 5px;

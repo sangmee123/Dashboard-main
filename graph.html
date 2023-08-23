@@ -264,9 +264,8 @@
                     arr3 = arr3_1.concat(arr3_2);
                     arr4 = arr4_1.concat(arr4_2);
                     arr5 = arr5_1.concat(arr5_2); 
-                
-                    $('#connect').text("DB 연결 성공");
                 }
+                $('#connect').text("DB 연결 성공");
             }).fail((data) => {
                 $('#connect').text("HTTP 요청 실패");
             });
