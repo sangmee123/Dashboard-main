@@ -96,7 +96,7 @@ a:hover {
     margin-top: 70px;
 }
 .header {   
-    width: 330px;
+    width: 310px;
     background-color: rgb(247, 246, 246);  ;
     color: rgba(0, 0, 0, 0.7);
     font-size: 20px;
@@ -104,7 +104,7 @@ a:hover {
     border-bottom: 1px solid rgb(226, 226, 226);
     padding: 20px;
     position: fixed;
-}.header p { margin-left: 30%; }
+}.header p { margin-left: 28%; }
 
 .list { 
     overflow-y: auto;
@@ -115,6 +115,7 @@ a:hover {
 }.list li {
     background-color: white;
     text-align: center;
+    font-size: 14px;
     padding: 20px 35px 20px 35px;
     border: 1px solid rgb(198, 198, 198);
     border-radius: 5px;
@@ -198,8 +199,8 @@ a:hover {
         margin-top: 60px;
     }
 
-    .header { width: 215px; }
-    .header p { margin-left: 18%; } 
+    .header { width: 275px; }
+    .header p { margin-left: 26%; } 
 
     .list {
         overflow-y: auto;
@@ -287,8 +288,8 @@ a:hover {
         margin-top: 60px;
     }
     
-    .header { width: 195px; }
-    .header p { margin-left: 12%; }
+    .header { width: 270px; }
+    .header p { margin-left: 23%; }
 
     .list {
         font-size: 13px;
