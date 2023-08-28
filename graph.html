@@ -52,8 +52,8 @@
     </div>
 
     <div class="graph_top">
-        <div class="selectBox">
-            <select name="fruits" class="select">
+        <div class="selectBox bgColor">
+            <select class="select">
                 <option disabled selected hidden>기업 리스트</option>
                 <optgroup label="영진기계">
                     <option value="9호기" class="opt1">9호기</option>
@@ -65,11 +65,11 @@
         </div>
         
 
-        <div id="chartdiv1"></div> <!-- Pressure 그래프 -->  
-        <div id="chartdiv2"></div> <!-- Max Depth 그래프 -->  
+        <div class="bgColor" id="chartdiv1"></div> <!-- Pressure 그래프 -->  
+        <div class="bgColor" id="chartdiv2"></div> <!-- Max Depth 그래프 -->  
 
         <div class="contents">
-            <div id="menu">
+            <div class="bgColor" id="menu">
                 <h1 id="corporation_list"><b>기업 리스트</b></h1>
                 <hr>
                 <ul class="list">
@@ -78,20 +78,16 @@
                         <li class="li_c li0 hide c">9호기</li> 
                         <li class="li_c li1 hide c">10호기</li> 
                         <li class="li_c li2 hide c">11호기</li> 
-                    </ul>
-                    <ul class="e">
-                        <li class="li_c li2 c" style="display: none;">(임시)</li>
-                        <li class="li_c li3 c" style="display: none;">(임시)</li>
-                    </ul>
+                    </ul>            
                 </ul><hr>
             </div>
         </div>
     </div>
 
     <div class="graph_bottom">   
-        <div id="chartdiv4"></div> <!-- Beat Position 그래프 -->
-        <div id="chartdiv3"></div> <!-- Torque 그래프 -->  
-        <div id="chartdiv5"></div> <!-- Inclination X & Y 그래프 -->
+        <div class="bgColor" id="chartdiv4"></div> <!-- Beat Position 그래프 -->
+        <div class="bgColor" id="chartdiv3"></div> <!-- Torque 그래프 -->  
+        <div class="bgColor" id="chartdiv5"></div> <!-- Inclination X & Y 그래프 -->
     </div>
 
     <script src="//code.jquery.com/jquery.min.js"></script> 
@@ -126,13 +122,7 @@
             $('.li2').css('color', '');
             $('.li2').css('backgroundColor', '');
 
-            $('#chartdiv1').css('backgroundColor', 'rgba(91, 96, 101, 0.5)');
-            $('#chartdiv2').css('backgroundColor', 'rgba(91, 96, 101, 0.5)');
-            $('#menu').css('backgroundColor', 'rgba(91, 96, 101, 0.5)');
-            $('#chartdiv3').css('backgroundColor', 'rgba(91, 96, 101, 0.5)');
-            $('#chartdiv4').css('backgroundColor', 'rgba(91, 96, 101, 0.5)');
-            $('#chartdiv5').css('backgroundColor', 'rgba(91, 96, 101, 0.5)');
-            $('.selectBox').css('backgroundColor', 'rgba(91, 96, 101, 0.5)');
+            $('.bgColor').css('backgroundColor', 'rgba(91, 96, 101, 0.5)');
         }
         function list_10() {
             m_IDX = 14; //영진기계-10호기 
@@ -149,13 +139,7 @@
             $('.li2').css('color', '');
             $('.li2').css('backgroundColor', '');
 
-            $('#chartdiv1').css('backgroundColor', 'rgba(49, 69, 70, 0.4)');
-            $('#chartdiv2').css('backgroundColor', 'rgba(49, 69, 70, 0.4)');
-            $('#menu').css('backgroundColor', 'rgba(49, 69, 70, 0.4)');
-            $('#chartdiv3').css('backgroundColor', 'rgba(49, 69, 70, 0.4)');
-            $('#chartdiv4').css('backgroundColor', 'rgba(49, 69, 70, 0.4)');
-            $('#chartdiv5').css('backgroundColor', 'rgba(49, 69, 70, 0.4)');
-            $('.selectBox').css('backgroundColor', 'rgba(49, 69, 70, 0.4)');
+            $('.bgColor').css('backgroundColor', 'rgba(49, 69, 70, 0.4)');
         }
         function list_11() {
             m_IDX = 19; //영진기계-11호기 
@@ -172,27 +156,22 @@
             $('.li1').css('color', '');
             $('.li1').css('backgroundColor', '');
 
-            $('#chartdiv1').css('backgroundColor', 'rgba(24, 38, 51, 0.4)');
-            $('#chartdiv2').css('backgroundColor', 'rgba(24, 38, 51, 0.4)');
-            $('#menu').css('backgroundColor', 'rgba(24, 38, 51, 0.4)');
-            $('#chartdiv3').css('backgroundColor', 'rgba(24, 38, 51, 0.4)');
-            $('#chartdiv4').css('backgroundColor', 'rgba(24, 38, 51, 0.4)');
-            $('#chartdiv5').css('backgroundColor', 'rgba(24, 38, 51, 0.4)');
-            $('.selectBox').css('backgroundColor', 'rgba(24, 38, 51, 0.4)');
+            $('.bgColor').css('backgroundColor', 'rgba(24, 38, 51, 0.4)');
         }        
 
+
         /* 웹 PC - 기업 리스트에서 영진기계를 선택시*/
-        $('.youngjin').on('click', function() {
+        $('.youngjin').on('click', () => {
             $('.hide').css('display') == 'none' ?
             $('.hide').css('display', 'block') : 
             $('.hide').css('display', 'none');
         });
-        $('.li0').on('click', function() { list_9(); });  //9호기 선택시
-        $('.li1').on('click', function() { list_10(); }); //10호기 선택시
-        $('.li2').on('click', function() { list_11(); }); //11호기 선택시
+        $('.li0').on('click', () => { list_9(); });  //9호기 선택시
+        $('.li1').on('click', () => { list_10(); }); //10호기 선택시
+        $('.li2').on('click', () => { list_11(); }); //11호기 선택시
 
         /* 모바일 - 기업 리스트(영진기계) */
-        $('select').change(function(e) { 
+        $('select').change((e) => { 
             if($(e.target).val() === "9호기") { list_9(); }
             else if($(e.target).val() === "10호기") { list_10(); } 
             else if($(e.target).val() === "11호기") { list_11(); }
@@ -201,13 +180,14 @@
         const period = 3000;
         GET_db1(); /* Before Data */   
         setInterval(GET_db2, period); // 3초 단위로 갱신 처리
+
         function GET_db1() {
             $.ajax({
                 url: "GET_db.php",
                 type: "POST", 
                 data: { m_IDX: m_IDX },
                 async: false,
-            }).done(function(data) {
+            }).done((data) => {
                 data = JSON.parse(data);
                 for(i in data){
                     if(data[i].result == "success") {
@@ -216,14 +196,13 @@
                             value: Math.abs(data[i].pressure) }) 
                         arr2_1.push({ 
                             year: data[i].collecttime, 
-                            value: Math.abs(data[i].max_depth) / 1000 + 0.1 });
+                            value: Math.abs(data[i].max_depth) / 1000 + 0.1});
                         arr3_1.push({ 
                             year: data[i].collecttime,
                             value: Math.abs(data[i].torque) });
                         arr4_1.push({
                             year: data[i].collecttime,
-                            value: Math.abs(data[i].beat_position) / 1000 + 0.1});
-
+                            value: Math.abs(data[i].beat_position) / 1000  + 0.1});
                         let inX = data[i].inclination_x;
                         let inY = data[i].inclination_y;
                         if(inX > 18000) inX = 36000 - data[i].inclination_x;
@@ -236,7 +215,7 @@
                     }
                 } 
                 $('#connect').text("DB 연결 성공");
-            }).fail(function(data) {
+            }).fail((data) => {
                 $('#connect').text("HTTP 요청 실패");
             });
         }
@@ -253,7 +232,7 @@
                 type: "POST", 
                 data: { m_IDX: m_IDX },
                 async: false,
-            }).done(function(data) {
+            }).done((data) => {
                 data = JSON.parse(data);
                 if(data.result == "success") {
                     arr1_2.push({ 
@@ -262,13 +241,12 @@
                     arr2_2.push({ 
                         year: data.collecttime, 
                         value: Math.abs(data.max_depth) / 1000 + 0.1});
-
                     arr3_2.push({ 
                         year: data.collecttime,
                         value: Math.abs(data.torque) });
                     arr4_2.push({
                         year: data.collecttime,
-                        value: Math.abs(data.beat_position) / 1000 + 0.1 });
+                        value: Math.abs(data.beat_position) / 1000 + 0.1});
 
                     let inX = data.inclination_x;
                     let inY = data.inclination_y;
@@ -288,10 +266,10 @@
                     arr5 = arr5_1.concat(arr5_2); 
                 }
                 $('#connect').text("DB 연결 성공");
-            }).fail(function(data) {
+            }).fail((data) => {
                 $('#connect').text("HTTP 요청 실패");
             });
-        }         
+        }        
     </script>  
     <script src="js/graph.js"></script> 
 </body>    

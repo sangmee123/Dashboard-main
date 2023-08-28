@@ -97,6 +97,7 @@ map.addControl(mapTypeControl, kakao.maps.ControlPosition.TOPRIGHT);
 //각 기업 클릭 시 위치 마커 생성
 for(let i = 0; i < 14; i++) {
     document.getElementById('li' + i).addEventListener('click', function(e) {  
+
         var mapContainer = document.getElementById('map'), // 지도를 표시할 div 
         mapOption = { 
             center: arrLocation[i].latLng, // 지도의 중심좌표
