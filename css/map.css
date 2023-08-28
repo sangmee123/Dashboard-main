@@ -96,7 +96,7 @@ a:hover {
     margin-top: 70px;
 }
 .header {   
-    width: 300px;
+    width: 310px;
     background-color: rgb(247, 246, 246);  ;
     color: rgba(0, 0, 0, 0.7);
     font-size: 20px;
@@ -104,22 +104,23 @@ a:hover {
     border-bottom: 1px solid rgb(226, 226, 226);
     padding: 20px;
     position: fixed;
-}.header p { margin-left: 25%;}
+}.header p { margin-left: 28%; }
 
-.list { 
+#list { 
     overflow-y: auto;
     color: rgba(0, 0, 0, 0.85);
     list-style: none;
-    padding: 10px 70px 10px 70px;
+    padding: 10px 50px 10px 50px;
     margin-top: 70px;
-}.list li {
+}#list li {
     background-color: white;
     text-align: center;
+    font-size: 14px;
     padding: 20px 35px 20px 35px;
     border: 1px solid rgb(198, 198, 198);
     border-radius: 5px;
     margin-top: 5px;
-}.list li:hover {
+}#list li:hover {
     background-color: rgba(198, 198, 198);
 }
 
@@ -139,7 +140,6 @@ a:hover {
     
     .time {
         margin-top: -5%;
-        margin-bottom: 20px;
         font-size: 40px;
     }
 
@@ -198,14 +198,14 @@ a:hover {
         margin-top: 60px;
     }
 
-    .header { width: 215px; }
-    .header p { margin-left: 18%; } 
+    .header { width: 275px; }
+    .header p { margin-left: 26%; } 
 
-    .list {
+    #list {
         overflow-y: auto;
         height: 75%;
-        padding: 10px 50px 10px 50px;
-    }.list li {
+        padding: 10px 40px 10px 40px;
+    }#list li {
         font-size: 13px;
         font-weight: bold;
         padding: 15px 25px 15px 25px;
@@ -287,15 +287,15 @@ a:hover {
         margin-top: 60px;
     }
     
-    .header { width: 195px; }
-    .header p { margin-left: 12%; }
+    .header { width: 270px; }
+    .header p { margin-left: 23%; }
 
-    .list {
+    #list {
         font-size: 13px;
         font-weight: bold;
         list-style: none;
         padding: 10px 40px 10px 40px;
-    }.list li {
+    }#list li {
         padding: 13px 25px 13px 25px;
         margin-top: 2.5px;
     } 
@@ -407,12 +407,12 @@ a:hover {
     }
     .header p { margin-left: 25%; }
 
-    .list {
+    #list {
         font-size: 13px;
         font-weight: bold;
         list-style: none;
         padding: 10px 40px 10px 40px;
-    }.list li {
+    }#list li {
         padding: 13px 25px 13px 25px;
         margin-top: 2.5px;
     } 

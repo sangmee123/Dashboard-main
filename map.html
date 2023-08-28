@@ -6,7 +6,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Smart Dashboard</title>
     <link rel="stylesheet" href="css/map.css">
-    <script type="text/javascript" src="//dapi.kakao.com/v2/maps/sdk.js?appkey=571f7c7747510202bfe340f0106df41a"></script>
+    <script type="text/javascript" src="//dapi.kakao.com/v2/maps/sdk.js?appkey=536084da59ab938b9937e653d8f4e6df"></script>
 </head>
 <body>
     <div class="navbar">
@@ -22,6 +22,7 @@
             <img id="todayImg">
             <br><span class="todayWeather" id="weatherToday1"></span>
             <br><span class="todayWeather" id="weatherToday2"></span>
+            <p id="connect" style="font-size:12px;">db연결 중...</p>
         </div>
     </div>
     <div class="logo">
@@ -49,25 +50,52 @@
     </div>
     
     <div class="contents">
-        <div class="header"><p>총 14개의 기업</p></div>
-        <ul class="list">
-            <li class="li_c li0">서울건설기계(주)</li>
-            <li class="li_c li1">우리건설기계</li>
-            <li class="li_c li2">봉래건설기계(주)</li>
-            <li class="li_c li3">태산건설기계</li>
-            <li class="li_c li4">(주)비젼시스템</li>
-            <li class="li_c li5">정우건설중기</li>
-            <li class="li_c li6">(주)에스지오</li>
-            <li class="li_c li7">대웅건설(주)</li>
-            <li class="li_c li8">영주대형건설기계</li>
-            <li class="li_c li9">영암건설장비(주)</li>
-            <li class="li_c li11">송광건설기계</li>
-            <li class="li_c li10">금성건설기계</li>
-            <li class="li_c li12">솔리메틱스</li>
-            <li class="li_c li13">한내건설(주)</li>
+        <div class="header"><p></p></div>
+        <ul id="list">
+            <li class="li_c" id="li0"></li>
+            <li class="li_c" id="li1"></li>
+            <li class="li_c" id="li2"></li>
+            <li class="li_c" id="li3"></li>
+            <li class="li_c" id="li4"></li>
+            <li class="li_c" id="li5"></li>
+            <li class="li_c" id="li6"></li>
+            <li class="li_c" id="li7"></li>
+            <li class="li_c" id="li8"></li>
+            <li class="li_c" id="li9"></li>
+            <li class="li_c" id="li11"></li>
+            <li class="li_c" id="li10"></li>
+            <li class="li_c" id="li12"></li>
+            <li class="li_c" id="li13"></li>
         </ul>
     </div>
-    
+    <script src="//code.jquery.com/jquery.min.js"></script> 
+    <script>
+        let arrLocation = [];
+        $.ajax({
+                url: "GET_map.php",
+                type: "GET", 
+                async: true,
+        }).done((data) => {
+            data = JSON.parse(data);
+            for(i in data) {
+                if(data[i].result == "success") {
+                    arrLocation.push({
+                        "title": data[i].work_name,
+                        "latLng": new kakao.maps.LatLng(data[i].work_lat, data[i].work_lng)
+                    })
+                    $('#connect').text("DB 연결 성공");
+                }
+            }         
+            
+            for(let i = 0; i < arrLocation.length; i++) {
+                document.getElementById('li' + i).textContent = arrLocation[i].title;
+            }
+
+            $(".header p").text(`총 ${arrLocation.length}개의 기업`)
+        }).fail((data) => {
+            $('#connect').text("HTTP 요청 실패");
+        }); 
+    </script>
     <script src="js/map.js"></script>    
 </body>
 </html>
