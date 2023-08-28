@@ -90,8 +90,6 @@
             for(let i = 0; i < arrLocation.length; i++) {
                 document.getElementById('li' + i).textContent = arrLocation[i].title;
             }
-
-            $(".header p").text(`총 ${arrLocation.length}개의 기업`)
         }).fail((data) => {
             $('#connect').text("HTTP 요청 실패");
         }); 
