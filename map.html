@@ -50,37 +50,45 @@
     </div>
     
     <div class="contents">
-        <div class="header"><p>총 14개의 기업</p></div>
-        <ul class="list">
-            <li class="li_c" id="li0">서울건설기계(주)</li>
-            <li class="li_c" id="li1">우리건설기계</li>
-            <li class="li_c" id="li2">봉래건설기계(주)</li>
-            <li class="li_c" id="li3">태산건설기계</li>
-            <li class="li_c" id="li4">(주)비젼시스템</li>
-            <li class="li_c" id="li5">정우건설중기</li>
-            <li class="li_c" id="li6">(주)에스지오</li>
-            <li class="li_c" id="li7">대웅건설(주)</li>
-            <li class="li_c" id="li8">영주대형건설기계</li>
-            <li class="li_c" id="li9">영암건설장비(주)</li>
-            <li class="li_c" id="li11">송광건설기계</li>
-            <li class="li_c" id="li10">금성건설기계</li>
-            <li class="li_c" id="li12">솔리메틱스</li>
+        <div class="header"><p>현장 작업장</p></div>
+        <ul id="list">
+            <li class="li_c" id="li0"></li>
+            <li class="li_c" id="li1"></li>
+            <li class="li_c" id="li2"></li>
+            <li class="li_c" id="li3"></li>
+            <li class="li_c" id="li4"></li>
+            <li class="li_c" id="li5"></li>
+            <li class="li_c" id="li6"></li>
+            <li class="li_c" id="li7"></li>
+            <li class="li_c" id="li8"></li>
+            <li class="li_c" id="li9"></li>
+            <li class="li_c" id="li11"></li>
+            <li class="li_c" id="li10"></li>
+            <li class="li_c" id="li12"></li>
             <li class="li_c" id="li13"></li>
         </ul>
     </div>
     <script src="//code.jquery.com/jquery.min.js"></script> 
     <script>
-        
+        let arrLocation = [];
         $.ajax({
                 url: "GET_map.php",
                 type: "GET", 
                 async: true,
         }).done((data) => {
             data = JSON.parse(data);
-            if(data.result == "success") {
-                $('#li13').text(data.work_name);
-                
-                $('#connect').text("DB 연결 성공");
+            for(i in data) {
+                if(data[i].result == "success") {
+                    arrLocation.push({
+                        "title": data[i].work_name,
+                        "latLng": new kakao.maps.LatLng(data[i].work_lat, data[i].work_lng)
+                    })
+                    $('#connect').text("DB 연결 성공");
+                }
+            }         
+            
+            for(let i = 0; i < arrLocation.length; i++) {
+                document.getElementById('li' + i).textContent = arrLocation[i].title;
             }
         }).fail((data) => {
             $('#connect').text("HTTP 요청 실패");

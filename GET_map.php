@@ -9,17 +9,18 @@
     mysqli_set_charset($conn, "utf8");
 
     if($conn) {
-        $sql = "SELECT work_name, work_address, work_lat, work_lng FROM mgt_work WHERE idx = 14;";
+        $sql = "SELECT work_name, work_address, work_lat, work_lng FROM mgt_work";
         if($result = mysqli_query($conn, $sql)) {
-            $row=mysqli_fetch_array($result);
-            $msg = json_encode(array(
+            while($row=mysqli_fetch_array($result)){
+                array_push($result_array,array(
                     "result" => 'success',
                     "Error" => 'none',
                     "work_name" => $row["work_name"],
                     "work_address" => $row["work_address"],
                     "work_lat" => $row["work_lat"],
-                    "work_lng" => $row["work_lng"]
-                ));
+                    "work_lng" => $row["work_lng"]));
+            }
+            $msg = json_encode($result_array);
         } else {
             $msg = json_encode(array("result" => 'fail', "Error" =>  mysqli_error($conn)));
         }
