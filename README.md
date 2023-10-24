@@ -45,4 +45,10 @@ https://solimatics.co.kr
 
 https://github.com/sangmee123/Dashboard-main/assets/69633033/1cbaf29e-8988-4368-a481-5b93788a9532
 
+<br>
+
+## 노트북 버전 Map ##
+https://github.com/sangmee123/Dashboard-main/assets/69633033/c4369c59-5018-4256-9bad-db169b80f101
+
+
 
