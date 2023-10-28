@@ -9,6 +9,8 @@
 
 - 🛠 [사용 기술 스택](#-사용-기술-스택)
 
+- 🎬 [시연 영상](#-시연-영상)
+
 ## 📝 포트폴리오 개요
 <img src="images/readme_home.jpg">
 
@@ -43,11 +45,14 @@ https://solimatics.co.kr
 ## PC 버전(Desktop)
 <img src="images/readme1.jpg"><img src="images/readme2.jpg"><img src="images/readme3.jpg">
 
-https://github.com/sangmee123/Dashboard-main/assets/69633033/1cbaf29e-8988-4368-a481-5b93788a9532
-
 <br>
 
-## 노트북 버전 Map ##
+## 🎬 시연 영상
+
+### PC 버전 Graph
+https://github.com/sangmee123/Dashboard-main/assets/69633033/1cbaf29e-8988-4368-a481-5b93788a9532
+
+### 노트북 버전 Map 
 https://github.com/sangmee123/Dashboard-main/assets/69633033/c4369c59-5018-4256-9bad-db169b80f101
 
 
