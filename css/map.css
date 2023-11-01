@@ -90,6 +90,7 @@ a:hover {
 
 .contents {
     background-color: rgb(247, 246, 246);   
+    width: 310px;
     height: 100%;
     left: 250px;
     position: fixed;    
@@ -181,7 +182,7 @@ a:hover {
     #todayImg { width: 100px; }
     .todayWeather {
         color: white;
-        font-size: 18px;
+        font-size: 15px;
         font-weight: bold;
     }
 
@@ -198,13 +199,13 @@ a:hover {
         margin-top: 60px;
     }
 
-    .header { width: 275px; }
+    .header { width: 270px; }
     .header p { margin-left: 26%; } 
 
     #list {
         overflow-y: auto;
         height: 75%;
-        padding: 10px 40px 10px 40px;
+        padding: 10px 30px 10px 30px;
     }#list li {
         font-size: 13px;
         font-weight: bold;
@@ -288,9 +289,10 @@ a:hover {
     }
     
     .header { width: 270px; }
-    .header p { margin-left: 23%; }
+    .header p { margin-left: 30%; }
 
     #list {
+        width: 260px;
         font-size: 13px;
         font-weight: bold;
         list-style: none;

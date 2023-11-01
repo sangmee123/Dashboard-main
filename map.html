@@ -6,7 +6,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Smart Dashboard</title>
     <link rel="stylesheet" href="css/map.css">
-    <script type="text/javascript" src="//dapi.kakao.com/v2/maps/sdk.js?appkey=536084da59ab938b9937e653d8f4e6df"></script>
+    <script type="text/javascript" src="//dapi.kakao.com/v2/maps/sdk.js?appkey=571f7c7747510202bfe340f0106df41a"></script>
 </head>
 <body>
     <div class="navbar">
@@ -77,7 +77,7 @@
                 async: true,
         }).done((data) => {
             data = JSON.parse(data);
-            for(i in data) {
+            for(let i in data) {
                 if(data[i].result == "success") {
                     arrLocation.push({
                         "title": data[i].work_name,

@@ -34,66 +34,6 @@ let map = new kakao.maps.Map(mapContainer, mapOption); // 지도를 생성합니
 var mapTypeControl = new kakao.maps.MapTypeControl(); 
 map.addControl(mapTypeControl, kakao.maps.ControlPosition.TOPRIGHT);
 
-// 마커가 표시될 위치입니다 
-// let positions = [
-//   {
-//     title: '서울건설기계(주)',
-//     latLng: new kakao.maps.LatLng(37.673613, 126.865862)
-//   },
-//   {
-//     title: '우리건설기계',
-//     latLng: new kakao.maps.LatLng(37.568702, 126.993562)
-//   },
-//   {
-//     title: '봉래건설기계(주)',
-//     latLng: new kakao.maps.LatLng(37.375656, 126.944399)
-//   },
-//   {
-//     title: '태산건설기계',
-//     latLng: new kakao.maps.LatLng(37.597822, 126.650762)
-//   },
-//   {
-//     title: '(주)비젼시스템',
-//     latLng: new kakao.maps.LatLng(37.513896, 127.115957)
-//   },
-//   {
-//     title: '정우건설중기',
-//     latLng: new kakao.maps.LatLng(37.601084, 127.099927)
-//   },
-//   {
-//     title: '(주)에스지오',
-//     latLng: new kakao.maps.LatLng(37.402056, 126.686377)
-//   },
-//   {
-//     title: '대웅건설(주)',
-//     latLng: new kakao.maps.LatLng(37.035640, 127.604745)
-//   },
-//   {
-//     title: '영주대형건설기계',
-//     latLng: new kakao.maps.LatLng(36.816873, 128.638362)
-//   },
-//   {
-//     title: '영암건설장비(주)',
-//     latLng: new kakao.maps.LatLng(37.179881, 128.976808)
-//   },
-//   {
-//     title: '금성건설기계',
-//     latLng: new kakao.maps.LatLng(36.890148, 127.481973)
-//   },
-//   {
-//     title: '송광건설기계',
-//     latLng: new kakao.maps.LatLng(37.168421, 126.895548)
-//   },
-//   {
-//     title: '솔리메틱스',
-//     latLng: new kakao.maps.LatLng(37.868999, 127.738249)
-//   },
-//   {
-//     title: '한내건설(주)',
-//     latLng: new kakao.maps.LatLng(36.941485, 127.688740)
-//   }
-// ];
-
 //각 기업 클릭 시 위치 마커 생성
 for(let i = 0; i < 14; i++) {
     document.getElementById('li' + i).addEventListener('click', function(e) {  
@@ -121,6 +61,82 @@ for(let i = 0; i < 14; i++) {
 /* 날씨 API */
 const API_KEY = "7b25d47b3c02e4069876383772c479c5";
 
+const weatherDescKo = [
+    { 201: '가벼운 비를 동반한 천둥구름' },
+    { 200: '비를 동반한 천둥구름' },
+    { 202: '폭우를 동반한 천둥구름' },
+    { 210: '약한 천둥구름' },
+    { 211: '천둥구름' },
+    { 212: '강한 천둥구름' },
+    { 221: '불규칙적 천둥구름' },
+    { 230: '약한 연무를 동반한 천둥구름' },
+    { 231: '연무를 동반한 천둥구름' },
+    { 232: '강한 안개비를 동반한 천둥구름' },
+    { 300: '가벼운 안개비' },
+    { 301: '안개비' },
+    { 302: '강한 안개비' },
+    { 310: '가벼운 적은비' },
+    { 311: '적은비' },
+    { 312: '강한 적은비' },
+    { 313: '소나기와 안개비' },
+    { 314: '강한 소나기와 안개비' },
+    { 321: '소나기' },
+    { 500: '악한 비' },
+    { 501: '중간 비' },
+    { 502: '강한 비' },
+    { 503: '매우 강한 비' },
+    { 504: '극심한 비' },
+    { 511: '우박' },
+    { 520: '약한 소나기 비' },
+    { 521: '소나기 비' },
+    { 522: '강한 소나기 비' },
+    { 531: '불규칙적 소나기 비' },
+    { 600: '가벼운 눈' },
+    { 601: '눈' },
+    { 602: '강한 눈' },
+    { 611: '진눈깨비' },
+    { 612: '소나기 진눈깨비' },
+    { 615: '약한 비와 눈' },
+    { 616: '비와 눈' },
+    { 620: '약한 소나기 눈' },
+    { 621: '소나기 눈' },
+    { 622: '강한 소나기 눈' },
+    { 701: '박무' },
+    { 711: '연기' },
+    { 721: '연무' },
+    { 731: '모래 먼지' },
+    { 741: '안개' },
+    { 751: '모래' },
+    { 761: '먼지' },
+    { 762: '화산재' },
+    { 771: '돌풍' },
+    { 781: '토네이도' },
+    { 800: '구름 한 점 없는 맑은 하늘' },
+    { 801: '약간의 구름이 낀 하늘' },
+    { 802: '드문드문 구름이 낀 하늘' },
+    { 803: '구름이 거의 없는 하늘' },
+    { 804: '구름으로 뒤덮인 흐린 하늘' },
+    { 900: '토네이도' },
+    { 901: '태풍' },
+    { 902: '허리케인' },
+    { 903: '한랭' },
+    { 904: '고온' },
+    { 905: '바람부는' },
+    { 906: '우박' },
+    { 951: '바람이 거의 없는' },
+    { 952: '약한 바람' },
+    { 953: '부드러운 바람' },
+    { 954: '중간 세기 바람' },
+    { 955: '신선한 바람' },
+    { 956: '센 바람' },
+    { 957: '돌풍에 가까운 센 바람' },
+    { 958: '돌풍' },
+    { 959: '심각한 돌풍' },
+    { 960: '폭풍' },
+    { 961: '강한 폭풍' },
+    { 962: '허리케인' },
+];
+
 function onGeoOk(position){
     const lat = position.coords.latitude;
     const lng = position.coords.longitude;
@@ -135,10 +151,12 @@ function onGeoOk(position){
               var img = document.querySelector('#todayImg');
               img.src = url;
 
+              const weatherDescObject = weatherDescKo.find(code => Object.keys(code)[0] == data.cod);
+              const weatherDescKoText = Object.values(weatherDescObject)[0];
               const weather = document.querySelector("#weatherToday1"); 
               const city = document.querySelector("#weatherToday2");
               city.innerText = data.name;
-              weather.innerText = `${data.weather[0].main} / ${parseInt(data.main.temp)}º`;
+              weather.innerText = `${weatherDescKoText} / ${parseInt(data.main.temp)}º`;
               console.log(data);
     });
 }
