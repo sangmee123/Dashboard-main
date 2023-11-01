@@ -63,7 +63,7 @@ https://solimatics.co.kr
 <br>
 
 ## Mobile 버전
-<img src="images/readme_mob1.png"><img src="images/readme_mob2.png">
+<img src="images/001.png"><img src="images/002.png">
 
 <br>
 
