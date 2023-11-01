@@ -10,6 +10,10 @@
 - 💡 [프로젝트 기획 의도](#-프로젝트-기획-의도)
 
 - 🛠 [사용 기술 스택](#-사용-기술-스택)
+  
+- 💻 [PC 버전(Desktop)](#-pc-버전desktop)
+  
+- 📱 [Mobile 버전](#-mobile-버전)
 
 - 🎬 [시연 영상](#-시연-영상)
 
@@ -57,12 +61,12 @@ https://solimatics.co.kr
 
 <br> 
 
-## PC 버전(Desktop)
+## 💻 PC 버전(Desktop)
 <img src="images/readme1.jpg"><img src="images/readme2.jpg"><img src="images/readme3.jpg">
 
 <br>
 
-## Mobile 버전
+## 📱 Mobile 버전
 <img src="images/001.png"><img src="images/002.png">
 
 <br>
