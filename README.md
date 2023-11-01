@@ -14,7 +14,7 @@
 <br>
 
 ## 📝 포트폴리오 개요
-<img src="images/readme_home.jpg">
+<img src="images/readme_home.png">
 
 >**프로젝트**: 천공기 실시간 그래프 Dashboard
 >
