@@ -73,10 +73,13 @@ https://solimatics.co.kr
 
 ## 🎬 시연 영상
 
-### PC 버전 Graph
-https://github.com/sangmee123/Dashboard-main/assets/69633033/1cbaf29e-8988-4368-a481-5b93788a9532
 
-### 노트북 버전 Map 
+### 노트북 버전 Graph
+
+https://github.com/sangmee123/Dashboard-main/assets/69633033/09b7af94-a148-4ed6-a7fb-7a89db68d5a6
+
+#### 노트북 버전 Map
+
 https://github.com/sangmee123/Dashboard-main/assets/69633033/c4369c59-5018-4256-9bad-db169b80f101
 
 
