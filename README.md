@@ -41,7 +41,8 @@
 <br> 
 
 ## 🔗 링크
-~~https://solimatics.co.kr~~ 호스팅 서비스 만료
+~~https://solimatics.co.kr~~ SSL 인증서 만료
+http://solimatics.co.kr
 
 <br> 
 
