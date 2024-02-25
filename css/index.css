@@ -7,8 +7,8 @@
 body {
     /*Image by Pixabay.*/
     background-image: url(../images/excavator.jpg); 
-    background-size: auto;
-    background-repeat: no-repeat;
+    background-size: 100% 100vh;
+    background-repeat: no-repeat; 
 }
 
 .navibar {
@@ -94,7 +94,7 @@ a {
     /* 노트북 & PC CSS */ 
     body {
         background-image: url(../images/excavator2.jpg);
-        background-size: 1280px 720px;
+        background-size: 100% 100vh;
         background-position-y: -4.5%;
     }
 
@@ -160,7 +160,7 @@ a {
 @media screen and (min-width:768px) and (max-width: 1200px) {
 
 	/* 테블릿 CSS */
-    body { background-size: 1180px 775px; }
+    body { background-size: 100% 100vh; }
 
     .navibar {
         width: 180px;
