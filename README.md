@@ -41,8 +41,10 @@
 <br> 
 
 ## 🔗 링크
-~~https://solimatics.co.kr~~ SSL 인증서 만료
-<br> 
+~~https://solimatics.co.kr~~ SSL 인증서 만료<br> 
+http://solimatics.co.kr
+
+<br>
 
 ## 💡 프로젝트 기획 의도
 건축 장비 관련 SW 회사에서 교외 근로를 하면서 맡은 프로젝트입니다.<br>
