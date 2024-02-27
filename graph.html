@@ -234,7 +234,6 @@
             }).done(data => {
                 data = JSON.parse(data);
                 if(data.result == "success") {
-                    intervalId();
                     let liveArr1 = {
                         year: data.collecttime,
                         value: Math.abs(data.pressure)
@@ -265,11 +264,11 @@
                     };
 
                     /* Before + Live => Data 이어 붙이기 */
-                    arr1.push(liveArr1);
-                    arr2.push(liveArr2);
-                    arr3.push(liveArr3);
-                    arr4.push(liveArr4);
-                    arr5.push(liveArr5); 
+                    arr1.concat(liveArr1);
+                    arr2.concat(liveArr2);
+                    arr3.concat(liveArr3);
+                    arr4.concat(liveArr4);
+                    arr5.concat(liveArr5); 
                 }
                 $('#connect').text("DB 연결 성공");
             }).fail(data => {
