@@ -51,7 +51,7 @@ function onGeoOk(position){
               console.log(data);
     });
 }
-function onGeoError(){ alert("Can't find you. No weather for you.");}
+function onGeoError(){ alert("날씨가 표시되지 않습니다. https로 변환해주세요."); }
 navigator.geolocation.getCurrentPosition(onGeoOk,onGeoError);
 
 /* 원본 이미지 */
