@@ -41,9 +41,7 @@
 <br> 
 
 ## 🔗 링크
-~~https://solimatics.co.kr~~ SSL 인증서 만료<br>
-http://solimatics.co.kr
-
+~~https://solimatics.co.kr~~ SSL 인증서 만료
 <br> 
 
 ## 💡 프로젝트 기획 의도
