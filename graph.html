@@ -88,8 +88,6 @@
 
     <script src="https://code.jquery.com/jquery-latest.min.js"></script>
     <script>
-        let m_IDX = 19; //기본 그래프 설정값 11호기
-
         /* All Data(Before + Live) */
         let arr1 = []; //pressure
         let arr2 = []; //max_depth
@@ -97,64 +95,56 @@
         let arr4 = []; //beat_position
         let arr5 = []; //inclination(x, y)
         
-        function list_9() {
-            m_IDX = 8; //영진기계-9호기  
-
+        function resetArrays() {
             arr1 = []; //pressure
             arr2 = []; //max_depth
             arr3 = []; //torque
             arr4 = []; //beat_position
             arr5 = []; //inclination(x, y)
+        }
 
-            GET_db1(); //데이터 초기화
+        let moduleIdx = 19; //기본 11호기 설정값  
+
+        function updateList(idx, bgColor) {
+            moduleIdx = idx;
+
+            /* 데이터 초기화 */
+            resetArrays();
+            GET_db1(); 
+
+            $('.bgColor').css('backgroundColor', bgColor);
+        }
+
+        function machine9() { 
+            updateList(8, 'rgba(91, 96, 101, 0.5)'); 
+
             $('.li0').css('backgroundColor', 'white');
             $('.li0').css('color', 'black');
             $('.li1').css('color', '');
             $('.li1').css('backgroundColor', '');
             $('.li2').css('color', '');
             $('.li2').css('backgroundColor', '');
+        } 
+        function machine10() { 
+            updateList(14, 'rgba(49, 69, 70, 0.4)'); 
 
-            $('.bgColor').css('backgroundColor', 'rgba(91, 96, 101, 0.5)');
-        }
-        function list_10() {
-            m_IDX = 14; //영진기계-10호기 
-
-            arr1 = []; //pressure
-            arr2 = []; //max_depth
-            arr3 = []; //torque
-            arr4 = []; //beat_position
-            arr5 = []; //inclination(x, y)
-            
-            GET_db1(); //데이터 초기화
             $('.li1').css('backgroundColor', 'white');
             $('.li1').css('color', 'black');
             $('.li0').css('color', '');
             $('.li0').css('backgroundColor', '');
             $('.li2').css('color', '');
             $('.li2').css('backgroundColor', '');
+        } 
+        function machine11() { 
+            updateList(19, 'rgba(24, 38, 51, 0.4)'); 
 
-            $('.bgColor').css('backgroundColor', 'rgba(49, 69, 70, 0.4)');
-        }
-        function list_11() {
-            m_IDX = 19; //영진기계-11호기 
-
-            arr1 = []; //pressure
-            arr2 = []; //max_depth
-            arr3 = []; //torque
-            arr4 = []; //beat_position
-            arr5 = []; //inclination(x, y)
-
-            GET_db1(); //데이터 초기화
             $('.li2').css('backgroundColor', 'white');
             $('.li2').css('color', 'black');
             $('.li0').css('color', '');
             $('.li0').css('backgroundColor', '');
             $('.li1').css('color', '');
             $('.li1').css('backgroundColor', '');
-
-            $('.bgColor').css('backgroundColor', 'rgba(24, 38, 51, 0.4)');
-        }        
-
+        } 
 
         /* 웹 PC - 기업 리스트에서 영진기계를 선택시*/
         $('.youngjin').on('click', () => {
@@ -162,15 +152,15 @@
             $('.hide').css('display', 'block') : 
             $('.hide').css('display', 'none');
         });
-        $('.li0').on('click', () => { list_9(); });  //9호기 선택시
-        $('.li1').on('click', () => { list_10(); }); //10호기 선택시
-        $('.li2').on('click', () => { list_11(); }); //11호기 선택시
+        $('.li0').on('click', () => { machine9(); });  //9호기 선택시
+        $('.li1').on('click', () => { machine10(); }); //10호기 선택시
+        $('.li2').on('click', () => { machine11(); }); //11호기 선택시
 
         /* 모바일 - 기업 리스트(영진기계) */
-        $('select').change((e) => { 
-            if($(e.target).val() === "9호기") { list_9(); }
-            else if($(e.target).val() === "10호기") { list_10(); } 
-            else if($(e.target).val() === "11호기") { list_11(); }
+        $('select').change(e => { 
+            if($(e.target).val() === "9호기") { machine9(); }
+            else if($(e.target).val() === "10호기") { machine10(); } 
+            else if($(e.target).val() === "11호기") { machine11(); }
         });
 
         /* Before Data */ 
@@ -179,7 +169,7 @@
             $.ajax({
                 url: "php/GET_db.php",
                 type: "POST", 
-                data: { m_IDX: m_IDX },
+                data: { m_IDX: moduleIdx },
                 async: false,
             }).done(data => {
                 data = JSON.parse(data);
@@ -229,7 +219,7 @@
             $.ajax({
                 url: "php/GET_db2.php",
                 type: "POST", 
-                data: { m_IDX: m_IDX },
+                data: { m_IDX: moduleIdx },
                 async: false,
             }).done(data => {
                 data = JSON.parse(data);
