@@ -213,7 +213,7 @@
 
         /* Live Data */
         const period = 3000;
-        const intervalId = setInterval(GET_db2, period); // 3초 단위로 갱신 처리
+        setInterval(GET_db2, period); // 3초 단위로 갱신 처리
 
         function GET_db2() {
             $.ajax({
@@ -254,16 +254,15 @@
                     };
 
                     /* Before + Live => Data 이어 붙이기 */
-                    arr1.concat(liveArr1);
-                    arr2.concat(liveArr2);
-                    arr3.concat(liveArr3);
-                    arr4.concat(liveArr4);
-                    arr5.concat(liveArr5); 
+                    arr1 = arr1.concat(liveArr1);
+                    arr2 = arr2.concat(liveArr2);
+                    arr3 = arr3.concat(liveArr3);
+                    arr4 = arr4.concat(liveArr4);
+                    arr5 = arr5.concat(liveArr5);
                 }
                 $('#connect').text("DB 연결 성공");
             }).fail(data => {
                 $('#connect').text("HTTP 요청 실패");
-                clearInterval(intervalId);
             });
         }        
     </script>  
