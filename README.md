@@ -65,7 +65,14 @@ http://solimatics.co.kr
 <br> 
 
 ## 💻 PC 버전(Desktop)
-<img src="images/readme1.jpg"><img src="images/readme2.jpg"><img src="images/readme3.jpg">
+## Home & Map
+<img src="images/readme1.jpg">
+
+## Product & Graph
+<img src="images/readme2.jpg">
+
+## 회사 소개 & 협력사
+<img src="images/readme3.jpg">
 
 <br>
 
