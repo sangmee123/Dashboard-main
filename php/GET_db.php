@@ -5,8 +5,6 @@
     $dbName = "";
 
     $conn = new mysqli($host, $user, $pw, $dbName); 
-
-    $now_date = date("Y-m-d");
     $result_array=array();
 
     /* 
@@ -18,9 +16,12 @@
 
     /* DB 연결 확인 */
     if($conn) { 
+        $now_date = date("Y-m-d");
+        
         $sql = "SELECT idx, module_idx, pressure, torque, inclination_x, inclination_y, max_depth, beat_position, collecttime  
         FROM raw_yjsensing WHERE module_idx=${m_IDX} AND collecttime BETWEEN '${now_date} 00:00:00' AND '${now_date} 23:59:59' 
         AND MOD(idx, 1000)=0 ORDER BY collecttime ASC;"; 
+
         if ($result = mysqli_query($conn, $sql)) {
             while($row=mysqli_fetch_array($result)){
                 array_push($result_array, array(
@@ -43,6 +44,7 @@
     }else{
         $msg = json_encode(array("result" => 'fail', "Error" => 'Could not connect'));
     }
+
     echo $msg;
     mysqli_close($conn);
     exit;
