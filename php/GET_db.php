@@ -1,8 +1,8 @@
 <?php
-    $host = "211.169.215.170:6004"; //139.150.80.81
-    $user = "soltmds";//enviot
-    $pw = "09!b72^ea2ea9&04b66";//env194^9*
-    $dbName = "tmds";//lock_iot
+    $host = ""; 
+    $user = "";
+    $pw = "";
+    $dbName = "";
 
     $conn = new mysqli($host, $user, $pw, $dbName); 
 

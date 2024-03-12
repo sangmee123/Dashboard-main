@@ -513,7 +513,7 @@ a {
 
     /* 기업 리스트 */
     .selectBox {
-        background: url('/images/arrow-down.png') calc(98% - 7px) center no-repeat;
+        background: url('../images/arrow-down.png') calc(98% - 7px) center no-repeat;
         background-size: 20px;
         display: block;  
         height: 45px;
